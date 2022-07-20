@@ -8,7 +8,7 @@ require 'nvim-treesitter.configs'.setup {
 		enable = true,
 		additional_vim_regex_highlighting = false,
 	},
-	ensure_installed = { "json", "go", "lua" }
+	ensure_installed = { "json", "go", "lua", "make", "markdown", "markdown_inline", "yaml" }
 }
 
 -- local ts_utils = require 'nvim-treesitter.ts_utils'
