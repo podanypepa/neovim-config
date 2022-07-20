@@ -3,6 +3,8 @@ my neovim configurations...
 
 Easy `git clone git@github.com:podanypepa/neovim-config.git` in your `~/.config/nvim/` directory.
 
+[`init.lua`](./init.lua) is neovim config entry point.
+
 ## package manager
 
 I have used [`packer.nvim`](https://github.com/wbthomason/packer.nvim).
