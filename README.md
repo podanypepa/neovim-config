@@ -14,4 +14,4 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
-After installing `packer.nvim` run in `nvim` cmd `:PackerInstall`.
+After installing `packer.nvim` run in `nvim` cmd `:PackerInstall` or from coommand line `nvim +PackerInstall`

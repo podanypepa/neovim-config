@@ -1,4 +1,3 @@
-vim.g.mapleader = " "
 vim.opt.relativenumber = true
 vim.opt.nu = true
 vim.opt.hidden = true
@@ -6,7 +5,7 @@ vim.opt.cursorline = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.laststatus=3
+vim.opt.laststatus = 3
 vim.opt.clipboard = 'unnamedplus'
 vim.g.nohlsearch = true
 vim.g.noerrorbells = true
@@ -19,40 +18,20 @@ vim.g.nobackup = true
 vim.g.nowritebackup = true
 vim.g.autowrite = true
 vim.g.spliteright = true
-vim.opt.splitbelow = true  
 vim.g.lazyredraw = true
 vim.g.scrolloff = 4
 vim.g.noshowmode = true
 vim.g.cmdheight = 2
 vim.g.updatetime = 50
-vim.g.colorcolumn = 81
 vim.g.ttyfast = true
 vim.g.confirm = true
 vim.g.autoread = true
 vim.o.incsearch = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
-vim.cmd[[
-	set path+=**
-	set diffopt+=vertical
-	set wildignore+=.DS_Store
-	set wildignore+=**/node_modules/**
-	set wildignore+=*.pyc
-	set wildignore+=.git
-	set wildignore+=*/node_modules/**
-	set wildignore+=**/.git/*
-	set formatoptions-=cro
-	set completeopt=menu,menuone,noselect
-]]
-vim.g.completeopt = menu,menuone,noselect
-vim.g.netrw_banner = 0
-vim.g.netrw_liststyle = 3
-vim.g.netrw_list_hide = "&wildignore"
-vim.g.signcolumn = true
+vim.opt.signcolumn = 'yes'
 
-vim.cmd[[colorscheme gruvbox]]
-vim.o.background = 'dark'
-vim.cmd[[
+vim.cmd [[
 highlight Normal guibg=none
 highlight crsorlinenr cterm=NONE
 highlight SignColumn guibg=bg
@@ -74,8 +53,21 @@ set signcolumn=yes
 highlight link CompeDocumentation NormalFloat
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
-]]
-vim.g.gruvbox_invert_selection=0
-vim.g.gruvbox_contrast_dark = "hard"
-vim.g.gruvbox_italic=1
+hi Pmenu ctermfg=NONE ctermbg=236 cterm=NONE guifg=NONE guibg=#64666d gui=NONE
+hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#204a87 gui=NONE
 
+hi DiagnosticSignError ctermfg=Red ctermbg=none
+hi DiagnosticSignWarn ctermfg=214  ctermbg=none
+hi DiagnosticSignInfo ctermbg=none
+hi DiagnosticSignHint ctermbg=none
+
+" black background customization
+highlight Normal guibg=NONE ctermbg=none
+highlight Pmenu guibg=NONE ctermbg=none
+highlight VertSplit guibg=NONE ctermbg=none
+
+]]
+
+vim.g.gruvbox_invert_selection = 0
+vim.g.gruvbox_contrast_dark = "hard"
+vim.g.gruvbox_italic = 1
