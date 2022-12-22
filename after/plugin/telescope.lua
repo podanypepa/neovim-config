@@ -13,8 +13,11 @@ vim.keymap.set("n", "tR", function()
 end)
 vim.keymap.set("n", "<Leader><Leader>", function()
 	builtin.find_files({
-		layout_strategy='vertical',
-		layout_config={width=0.8}
+		follow = true,
+		no_ignore = true,
+		hidden = true,
+		layout_strategy ='vertical',
+		layout_config = {width=0.8}
 	})
 end)
 vim.keymap.set("n", "<Leader>tg", function()

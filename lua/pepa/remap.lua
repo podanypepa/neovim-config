@@ -20,3 +20,5 @@ vim.keymap.set("n", "[e", "<cmd>lua vim.diagnostic.goto_prev({severity = vim.dia
 vim.keymap.set("n", "]e", "<cmd>lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<CR>")
 vim.keymap.set("n", "<Leader>bd", ":bdelete<CR>")
 vim.keymap.set("n", "<silent><C-]>", "<cmd>lua vim.lsp.buf.definition()<CR>")
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
