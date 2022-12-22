@@ -5,16 +5,18 @@ return require('packer').startup(function(use)
 	use 'lewis6991/impatient.nvim'
 	use 'kyazdani42/nvim-web-devicons'
 	use { "nvim-telescope/telescope-file-browser.nvim" }
-
 	use {
 		'nvim-telescope/telescope.nvim',
 		requires = { {'nvim-lua/plenary.nvim'} }
+	}
+	use {
+		"windwp/nvim-autopairs",
+		config = function() require("nvim-autopairs").setup {} end
 	}
 	use 'gruvbox-community/gruvbox'
 	use 'tpope/vim-fugitive'
 	use { 'lewis6991/gitsigns.nvim' }
 	use 'numToStr/Comment.nvim'
-
 	use ( 'nvim-treesitter/nvim-treesitter', {run= ':TSUpdate'})
 	use {
 		'VonHeikemen/lsp-zero.nvim',
