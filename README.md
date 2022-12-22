@@ -15,3 +15,9 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 ```
 
 After installing `packer.nvim` run in `nvim` cmd `:PackerInstall` or from coommand line `nvim +PackerInstall`
+
+## `nvim` startup time
+
+```bash
+nvim --startuptime vimstartup.txt +e vimstartup.txt
+```
