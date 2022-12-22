@@ -27,7 +27,7 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set("n", "<leader>ts", function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") });
 end)
-vim.keymap.set("n", "tR", function()
+vim.keymap.set("n", "<leader>tR", function()
 	builtin.lsp_references({layout_strategy='vertical'});
 end)
 vim.keymap.set("n", "<Leader><Leader>", function()
