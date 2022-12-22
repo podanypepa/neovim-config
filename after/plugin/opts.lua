@@ -30,6 +30,7 @@ vim.o.incsearch = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.opt.signcolumn = 'yes'
+vim.opt.colorcolumn = "76"
 
 vim.cmd [[
 highlight Normal guibg=none
