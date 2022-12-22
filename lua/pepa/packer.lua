@@ -3,6 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	use 'lewis6991/impatient.nvim'
+	use { "nvim-telescope/telescope-file-browser.nvim" }
 
 	use {
 		'nvim-telescope/telescope.nvim',

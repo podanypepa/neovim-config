@@ -1,9 +1,24 @@
-require('telescope').setup{ defaults = {
-	file_ignore_patterns = {"node_modules", ".git"} }
+require("telescope").load_extension "file_browser"
+require('telescope').setup{
+	defaults = {
+		file_ignore_patterns = {"node_modules", ".git"}
+	},
+	extensions = {
+		file_browser = {
+			theme = "ivy",
+			hijack_netrw = true,
+			mappings = {
+				["i"] = {
+				},
+				["n"] = {
+				},
+			},
+		},
+	},
 }
 
 local builtin = require('telescope.builtin')
-
+vim.keymap.set("n", "<leader>bb", ":Telescope file_browser<CR>")
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
