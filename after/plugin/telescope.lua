@@ -45,12 +45,6 @@ vim.keymap.set("n", "<Leader>tg", function()
 		layout_config={width=0.8}
 	})
 end)
-vim.keymap.set("n", "<Leader>tg",function()
-	builtin.grep_string({
-		layout_strategy='vertical',
-		layout_config={width=0.8}
-	})
-end)
 vim.keymap.set("n", "<Leader>tb",function()
 	builtin.buffers({
 		layout_strategy='vertical',
