@@ -73,7 +73,9 @@ vim.g.gruvbox_invert_selection = 0
 vim.g.gruvbox_contrast_dark = "hard"
 vim.g.gruvbox_italic = 1
 
-vim.api.nvim_create_autocmd( { "BufWritePre" }, {
-  pattern = { "*.go" },
-  command = [[ %!gofmt | goimports ]],
-})
+-- vim.api.nvim_create_augroup('AutoFormatting', {})
+-- vim.api.nvim_create_autocmd('BufWritePre', {
+-- 	pattern = '*.go',
+-- 	group = 'AutoFormatting',
+-- 	command = "FormatWrite",
+-- })
