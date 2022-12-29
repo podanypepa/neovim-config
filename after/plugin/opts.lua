@@ -6,7 +6,7 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.laststatus = 3
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 vim.g.nohlsearch = true
 vim.g.noerrorbells = true
 vim.g.novisualbell = true
@@ -29,10 +29,10 @@ vim.g.autoread = true
 vim.o.incsearch = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 vim.opt.colorcolumn = "76"
 
-vim.cmd [[
+vim.cmd([[
 highlight Normal guibg=none
 highlight crsorlinenr cterm=NONE
 highlight SignColumn guibg=bg
@@ -67,7 +67,7 @@ highlight Normal guibg=NONE ctermbg=none
 highlight Pmenu guibg=NONE ctermbg=none
 highlight VertSplit guibg=NONE ctermbg=none
 
-]]
+]])
 
 vim.g.gruvbox_invert_selection = 0
 vim.g.gruvbox_contrast_dark = "hard"
