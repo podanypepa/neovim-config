@@ -36,7 +36,7 @@ lsp.on_attach(function(client, bufnr)
 	bind("n", "<leader>vd", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
 	bind("n", "<leader>[d", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts)
 	bind("n", "<leader>]d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
-	bind("n", "<leader>R", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
+	-- bind("n", "<leader>R", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
 end)
 
 lsp.setup()
