@@ -28,6 +28,7 @@ vim.keymap.set("n", "<leader>ed", ":Lexplore %:p:h<CR>")
 vim.keymap.set("n", "F", ":Format<CR>")
 vim.keymap.set('n', 'gR', '<CMD>Glance references<CR>')
 vim.keymap.set('n', 'R', '<CMD>Glance references<CR>')
+vim.keymap.set("n", "<C-E>", ":NeoTreeFocusToggle<CR>")
 -- yank to system clipboard
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
