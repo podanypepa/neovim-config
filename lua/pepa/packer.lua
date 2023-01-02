@@ -53,4 +53,6 @@ return require("packer").startup(function(use)
 			"MunifTanjim/nui.nvim",
 		},
 	})
+	use("moll/vim-bbye")
+	use("machakann/vim-highlightedyank")
 end)
