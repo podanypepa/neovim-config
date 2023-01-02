@@ -28,3 +28,9 @@ vim.keymap.set("n", "<leader>ed", ":Lexplore %:p:h<CR>")
 vim.keymap.set("n", "F", ":Format<CR>")
 vim.keymap.set('n', 'gR', '<CMD>Glance references<CR>')
 vim.keymap.set('n', 'R', '<CMD>Glance references<CR>')
+-- yank to system clipboard
+vim.keymap.set("n", "<leader>y", "\"+y")
+vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set("n", "<leader>Y", "\"+Y")
+-- edit all ocurrances of a word under the cursor
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
