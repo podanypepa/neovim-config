@@ -4,6 +4,7 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("lewis6991/impatient.nvim")
 	use("kyazdani42/nvim-web-devicons")
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 	use({ "nvim-telescope/telescope-file-browser.nvim" })
 	use({
 		"nvim-telescope/telescope.nvim",
@@ -55,4 +56,8 @@ return require("packer").startup(function(use)
 	})
 	use("moll/vim-bbye")
 	use("machakann/vim-highlightedyank")
+	use({
+		"ray-x/lsp_signature.nvim",
+	})
+	require("lsp_signature").setup()
 end)
