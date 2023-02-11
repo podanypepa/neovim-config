@@ -1,2 +1,2 @@
 require("pepa.remap")
-require("pepa.packer")
+require("pepa.lazy")
