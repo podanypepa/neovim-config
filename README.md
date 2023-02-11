@@ -7,17 +7,35 @@ Easy `git clone git@github.com:podanypepa/neovim-config.git` in your `~/.config/
 
 ## package manager
 
-I have used [`packer.nvim`](https://github.com/wbthomason/packer.nvim).
+I have used [`lazy.nvim`](https://github.com/folke/lazy.nvim).
 
-```bash
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+You can add the following Lua code to your init.lua to bootstrap lazy.nvim
+
+```lua
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 ```
 
-After installing `packer.nvim` run in `nvim` cmd `:PackerInstall` or from coommand line `nvim +PackerInstall`
+After installing `lazy.nvim` run cmd `:Lazy`.
 
 ## `nvim` startup time
 
 ```bash
 nvim --startuptime vimstartup.txt +e vimstartup.txt
+```
+
+## Plugins update from cmd line
+
+```bash
+nvim --headless "+Lazy! sync" +qa
 ```
