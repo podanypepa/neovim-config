@@ -74,11 +74,11 @@ vim.g.gruvbox_contrast_dark = "hard"
 vim.g.gruvbox_italic = 1
 
 vim.api.nvim_create_augroup("AutoFormatting", {})
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*.go",
-	group = "AutoFormatting",
-	command = "Format",
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+-- 	pattern = "*.go",
+-- 	group = "AutoFormatting",
+-- 	command = "Format",
+-- })
 vim.api.nvim_create_autocmd("BufWritePost", {
 	pattern = "*.go",
 	group = "AutoFormatting",

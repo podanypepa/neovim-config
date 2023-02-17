@@ -5,7 +5,7 @@ lsp.ensure_installed({
 	"gopls",
 	"tsserver",
 	"eslint",
-	"sumneko_lua",
+	"lua_ls"
 })
 
 lsp.nvim_workspace()
