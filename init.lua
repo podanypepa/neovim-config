@@ -11,8 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = " " 
-vim.g.maplocalleader = " " 
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 vim.g.loaded_python3_provider = 0
 
 require("pepa")

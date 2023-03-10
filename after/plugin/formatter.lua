@@ -15,6 +15,9 @@ require("formatter").setup({
 			require("formatter.filetypes.go").gofmt,
 			require("formatter.filetypes.go").goimports,
 		},
+		rust = {
+			require("formatter.filetypes.rust").rustfmt,
+		},
 		json = {
 			require("formatter.filetypes.json").jq,
 		},

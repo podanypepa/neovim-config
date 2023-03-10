@@ -84,3 +84,8 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 	group = "AutoFormatting",
 	command = "Format",
 })
+vim.api.nvim_create_autocmd("BufWritePost", {
+	pattern = "*.rs",
+	group = "AutoFormatting",
+	command = "Format",
+})
