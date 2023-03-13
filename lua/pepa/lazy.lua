@@ -1,7 +1,6 @@
 return require("lazy").setup({
 	"lewis6991/impatient.nvim",
 	"kyazdani42/nvim-web-devicons",
-	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	"nvim-telescope/telescope-file-browser.nvim",
 	{
 		"nvim-telescope/telescope.nvim",
