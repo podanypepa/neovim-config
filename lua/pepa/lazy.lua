@@ -20,11 +20,11 @@ return require("lazy").setup({
 	"theHamsta/nvim-dap-virtual-text",
 	"rcarriga/nvim-dap-ui",
 	"numToStr/Comment.nvim",
-	{ "nvim-treesitter/nvim-treesitter"},
+	{ "nvim-treesitter/nvim-treesitter" },
 	-- { "nvim-treesitter/nvim-treesitter", { build = ":TSUpdate" }},
 	{
 		"VonHeikemen/lsp-zero.nvim",
-		branch = 'v1.x',
+		branch = "v2.x",
 		dependencies = {
 			-- LSP Support
 			{ "neovim/nvim-lspconfig" },
