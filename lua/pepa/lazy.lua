@@ -24,7 +24,8 @@ return require("lazy").setup({
 	-- { "nvim-treesitter/nvim-treesitter", { build = ":TSUpdate" }},
 	{
 		"VonHeikemen/lsp-zero.nvim",
-		branch = "v2.x",
+		-- branch = "v2.x",
+		branch = "v1.x",
 		dependencies = {
 			-- LSP Support
 			{ "neovim/nvim-lspconfig" },
