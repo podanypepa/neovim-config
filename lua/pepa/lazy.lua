@@ -61,4 +61,11 @@ return require("lazy").setup({
 	"machakann/vim-highlightedyank",
 	"ray-x/lsp_signature.nvim",
 	-- require("lsp_signature").setup(),
+	--
+	{
+		"ivanjermakov/troublesum.nvim",
+		config = function()
+			require("troublesum").setup()
+		end,
+	},
 })
