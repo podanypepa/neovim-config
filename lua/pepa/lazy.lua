@@ -73,10 +73,30 @@ return require("lazy").setup({
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
+		-- TODO: pepa
+		-- NOTE: pepa
 		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
+			signs = true,
+			gui_style = {
+				fg = "NONE", -- The gui style to use for the fg highlight group.
+				bg = "BOLD", -- The gui style to use for the bg highlight group.
+			},
+			keywords = {
+				TODO = {
+					color = "#DC2626",
+				},
+				NOTE = {
+					color = "test",
+				},
+			},
+			colors = {
+				error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
+				warning = { "DiagnosticWarn", "WarningMsg", "#FBBF24" },
+				info = { "DiagnosticInfo", "#2563EB" },
+				hint = { "DiagnosticHint", "#10B981" },
+				default = { "Identifier", "#7C3AED" },
+				test = { "Identifier", "#FF00FF" },
+			},
 		},
 	},
 	{
