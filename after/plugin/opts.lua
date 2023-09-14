@@ -67,6 +67,10 @@ highlight Normal guibg=NONE ctermbg=none
 highlight Pmenu guibg=NONE ctermbg=none
 highlight VertSplit guibg=NONE ctermbg=none
 
+augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost * FormatWrite
+augroup END
 ]])
 
 vim.g.gruvbox_invert_selection = 0

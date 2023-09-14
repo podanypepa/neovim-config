@@ -1,7 +1,14 @@
+local actions = require("telescope.actions")
+local trouble = require("trouble.providers.telescope")
+
 require("telescope").load_extension("file_browser")
 require("telescope").setup({
 	defaults = {
 		file_ignore_patterns = { "node_modules", ".git" },
+		mappings = {
+			i = { ["<c-t>"] = trouble.open_with_trouble },
+			n = { ["<c-t>"] = trouble.open_with_trouble },
+		},
 	},
 	extensions = {
 		file_browser = {
@@ -49,9 +56,9 @@ vim.keymap.set("n", "<Leader>tb", function()
 		layout_config = { width = 0.8 },
 	})
 end)
-vim.keymap.set("n", "<Leader>td", function()
-	builtin.diagnostics({
-		layout_strategy = "vertical",
-		layout_config = { width = 0.8 },
-	})
-end)
+-- vim.keymap.set("n", "<Leader>td", function()
+-- 	builtin.diagnostics({
+-- 		layout_strategy = "vertical",
+-- 		layout_config = { width = 0.8 },
+-- 	})
+-- end)
