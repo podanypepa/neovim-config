@@ -13,7 +13,7 @@ return require("lazy").setup({
 			require("nvim-autopairs").setup({})
 		end,
 	},
-	"gruvbox-community/gruvbox",
+	-- "gruvbox-community/gruvbox",
 	"tpope/vim-fugitive",
 	"lewis6991/gitsigns.nvim",
 	"mfussenegger/nvim-dap",
@@ -105,5 +105,11 @@ return require("lazy").setup({
 			position = "top",
 			padding = false,
 		},
+	},
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{ "ellisonleao/gruvbox.nvim", priority = 1000 },
+	{
+		"nvim-lualine/lualine.nvim",
+		requires = { "nvim-tree/nvim-web-devicons", opt = true },
 	},
 })
