@@ -147,4 +147,13 @@ require("lazy").setup({
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
+	{
+		"luckasRanarison/nvim-devdocs",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+		opts = {},
+	},
 })
