@@ -16,7 +16,6 @@ vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
-vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 vim.keymap.set("n", "<Esc><Esc>", ":nohlsearch<CR>")
 vim.keymap.set("n", "[e", "<cmd>lua vim.diagnostic.goto_prev({severity = vim.diagnostic.severity.ERROR})<CR>")
 vim.keymap.set("n", "]e", "<cmd>lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<CR>")
@@ -26,8 +25,6 @@ vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("n", "<leader>ed", ":Lexplore %:p:h<CR>")
 vim.keymap.set("n", "F", ":Format<CR>")
-vim.keymap.set("n", "gR", "<CMD>Glance references<CR>")
-vim.keymap.set("n", "R", "<CMD>Glance references<CR>")
 vim.keymap.set("n", "<C-E>", ":Neotree toggle<CR>")
 vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
@@ -36,8 +33,17 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>td", ":Trouble workspace_diagnostics<CR>")
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 
-local builtin = require("telescope.builtin")
+-- vim.keymap.set("n", "R", "<CMD>Glance references<CR>")
+vim.keymap.set("n", "gR", function()
+	require("trouble").open("lsp_references")
+end)
+-- vim.keymap.set("n", "gR", "<CMD>Glance references<CR>")
+vim.keymap.set("n", "R", function()
+	require("trouble").open("lsp_references")
+end)
 
+-- Telescope remaping
+local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>gf", builtin.git_files, {})
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
@@ -52,20 +58,17 @@ vim.keymap.set("n", "<Leader><Leader>", function()
 		layout_config = { width = 0.8 },
 	})
 end)
-
 vim.keymap.set("n", "<Leader>tR", function()
 	builtin.lsp_references({
 		layout_strategy = "vertical",
 	})
 end)
-
 vim.keymap.set("n", "<Leader>tg", function()
 	builtin.grep_string({
 		layout_strategy = "vertical",
 		layout_config = { width = 0.8 },
 	})
 end)
-
 vim.cmd([[
 nnoremap <leader>fw :execute 'Telescope live_grep  default_text=' . expand('<cword>')<cr>
 ]])
