@@ -3,6 +3,7 @@ require("gruvbox").setup({
 	underline = true,
 	bold = true,
 	italic = {
+		emphasis = true,
 		strings = true,
 		comments = true,
 		operators = false,
@@ -27,6 +28,7 @@ vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
 vim.cmd("highlight clear SignColumn")
+vim.cmd("hi CursorLineNr guibg=none ")
 vim.cmd("hi DiagnosticSignWarn ctermfg=yellow ctermbg=none")
 vim.cmd("hi DiagnosticSignError guifg=red ctermbg=none")
 vim.cmd("hi DiagnosticSignInfo guifg=Blue ctermbg=none")
