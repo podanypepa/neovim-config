@@ -32,6 +32,7 @@ vim.keymap.set("n", "<leader>Y", '"+Y')
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>td", ":Trouble workspace_diagnostics<CR>")
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+vim.keymap.set("n", "gx", "<esc>:URLOpenUnderCursor<cr>")
 
 -- vim.keymap.set("n", "R", "<CMD>Glance references<CR>")
 vim.keymap.set("n", "gR", function()
