@@ -71,6 +71,7 @@ require("lazy").setup({
 	{ "lewis6991/gitsigns.nvim" },
 	{
 		"numToStr/Comment.nvim",
+		lazy = true,
 		config = function()
 			require("Comment").setup()
 		end,
@@ -78,6 +79,7 @@ require("lazy").setup({
 	{ "dnlhc/glance.nvim" },
 	{
 		"folke/trouble.nvim",
+		lazy = true,
 		opts = {
 			position = "top",
 			padding = false,
@@ -104,6 +106,7 @@ require("lazy").setup({
 	{ "rafamadriz/friendly-snippets" },
 	{
 		"nvim-neo-tree/neo-tree.nvim",
+		lazy = true,
 		branch = "v3.x",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -112,6 +115,7 @@ require("lazy").setup({
 	},
 	{
 		"folke/todo-comments.nvim",
+		lazy = true,
 		dependencies = { "nvim-lua/plenary.nvim" },
 		-- TODO: pepa
 		opts = {
@@ -144,11 +148,13 @@ require("lazy").setup({
 	},
 	{
 		"nvim-telescope/telescope.nvim",
+		lazy = true,
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	-- lazy.nvim
 	{
 		"sontungexpt/url-open",
+		lazy = true,
 		event = "VeryLazy",
 		cmd = "URLOpenUnderCursor",
 		config = function()
