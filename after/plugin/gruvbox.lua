@@ -27,14 +27,15 @@ vim.cmd("colorscheme gruvbox")
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
+vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { fg = "gray", bg = "none" })
 
 vim.cmd([[
 highlight clear SignColumn
 hi CursorLineNr guibg=none
-hi DiagnosticSignWarn ctermfg=yellow ctermbg=none
+hi DiagnosticSignWarn guifg=orange ctermbg=none
 hi DiagnosticSignError guifg=red ctermbg=none
 hi DiagnosticSignInfo guifg=Blue ctermbg=none
-hi DiagnosticSignHint guifg=Green ctermbg=none
+hi DiagnosticSignHint guifg=gray ctermbg=none
 hi GitSignsAdd guifg=Green3 guibg=none
 hi GitSignsChange guifg=Yellow2 guibg=none
 hi GitSignsDelete guifg=OrangeRed1 guibg=none
