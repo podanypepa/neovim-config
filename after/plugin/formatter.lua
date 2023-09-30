@@ -25,6 +25,9 @@ require("formatter").setup({
 		html = {
 			require("formatter.filetypes.html").prettier,
 		},
+		css = {
+			require("formatter.filetypes.css").prettier,
+		},
 		lua = {
 			require("formatter.filetypes.lua").stylua,
 
