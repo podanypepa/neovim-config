@@ -1,6 +1,9 @@
 local cmp = require("cmp")
 local cmp_select_opts = { behavior = cmp.SelectBehavior.Select }
 
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+
 cmp.setup({
 	enabled = true,
 	sources = {
