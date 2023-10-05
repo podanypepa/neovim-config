@@ -12,7 +12,7 @@ require("nvim-treesitter.configs").setup({
 		"bash",
 		"typescript",
 		"markdown",
-		"html"
+		"html",
 	},
 
 	sync_install = false,

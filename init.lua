@@ -58,7 +58,7 @@ require("lazy").setup({
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
 	{ "neovim/nvim-lspconfig" },
-	{ "nvim-treesitter/nvim-treesitter" },
+	{ "nvim-treesitter/nvim-treesitter", event = { "BufReadPre", "BufNewFile" } },
 	{ "moll/vim-bbye" },
 	{ "kyazdani42/nvim-web-devicons" },
 	{
