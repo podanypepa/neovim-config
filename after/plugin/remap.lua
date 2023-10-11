@@ -33,6 +33,9 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>td", ":Trouble workspace_diagnostics<CR>")
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 vim.keymap.set("n", "gx", "<esc>:URLOpenUnderCursor<cr>")
+vim.keymap.set("v", "p", '"_dP')
+vim.keymap.set("n", "<leader>h", "<cmd>cnext<CR>zz", { desc = "Forward qfixlist" })
+vim.keymap.set("n", "<leader>;", "<cmd>cprev<CR>zz", { desc = "Backward qfixlist" })
 
 -- vim.keymap.set("n", "R", "<CMD>Glance references<CR>")
 vim.keymap.set("n", "gR", function()
