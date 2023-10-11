@@ -36,6 +36,8 @@ vim.keymap.set("n", "gx", "<esc>:URLOpenUnderCursor<cr>")
 vim.keymap.set("v", "p", '"_dP')
 vim.keymap.set("n", "<leader>h", "<cmd>cnext<CR>zz", { desc = "Forward qfixlist" })
 vim.keymap.set("n", "<leader>;", "<cmd>cprev<CR>zz", { desc = "Backward qfixlist" })
+vim.keymap.set("n", "<leader>q", "<cmd>Bdelete<CR>", { desc = "Close Buffer" })
+vim.keymap.set("n", "<leader>cp", '<cmd>let @+ = expand("%:p")<CR>', { desc = "Copy File Path" })
 
 -- vim.keymap.set("n", "R", "<CMD>Glance references<CR>")
 vim.keymap.set("n", "gR", function()
