@@ -19,3 +19,10 @@ vim.diagnostic.config({
 	},
 	underline = true,
 })
+
+-- additional filetypes
+vim.filetype.add({
+	extension = {
+		templ = "templ",
+	},
+})

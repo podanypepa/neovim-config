@@ -159,4 +159,5 @@ require("lazy").setup({
 			url_open.setup({})
 		end,
 	},
+	{ "vrischmann/tree-sitter-templ" },
 })
