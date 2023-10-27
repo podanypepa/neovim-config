@@ -102,7 +102,7 @@ require("lazy").setup({
 			{ "hrsh7th/cmp-nvim-lua" },
 		},
 	},
-	{ "rafamadriz/friendly-snippets" },
+	-- { "rafamadriz/friendly-snippets" },
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
@@ -161,3 +161,15 @@ require("lazy").setup({
 	},
 	{ "vrischmann/tree-sitter-templ" },
 })
+
+-- local statusline = {
+-- 	" %f",
+-- 	"%r",
+-- 	"%m",
+-- 	"%=",
+-- 	"%{&filetype}",
+-- 	" %2p%%",
+-- 	" %3l:%-2c ",
+-- }
+--
+-- vim.o.statusline = table.concat(statusline, "")
