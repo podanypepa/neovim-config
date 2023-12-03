@@ -53,7 +53,12 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{ "folke/neodev.nvim", opts = {} },
 	{ "ellisonleao/gruvbox.nvim", priority = 1000 },
-	{ "mhartington/formatter.nvim" },
+	-- { "mhartington/formatter.nvim" },
+	{
+		"stevearc/conform.nvim",
+		opts = {},
+		event = { "BufReadPre", "BufNewFile" },
+	},
 	{ "machakann/vim-highlightedyank" },
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
