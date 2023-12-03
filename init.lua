@@ -165,6 +165,11 @@ require("lazy").setup({
 		end,
 	},
 	{ "vrischmann/tree-sitter-templ" },
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		requires = { { "nvim-lua/plenary.nvim" } },
+	},
 })
 
 -- local statusline = {
