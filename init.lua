@@ -53,6 +53,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{ "folke/neodev.nvim", opts = {} },
 	{ "ellisonleao/gruvbox.nvim", priority = 1000 },
+	{ "projekt0n/github-nvim-theme" },
 	-- { "mhartington/formatter.nvim" },
 	{
 		"stevearc/conform.nvim",
@@ -166,9 +167,34 @@ require("lazy").setup({
 	},
 	{ "vrischmann/tree-sitter-templ" },
 	{
-		"ThePrimeagen/harpoon",
-		branch = "harpoon2",
-		requires = { { "nvim-lua/plenary.nvim" } },
+		"mfussenegger/nvim-dap",
+		dependencies = {
+			"rcarriga/nvim-dap-ui",
+			"leoluz/nvim-dap-go",
+		},
+		config = function()
+			local dap = require("dap")
+			local dapui = require("dapui")
+
+			dapui.setup()
+			require("dap-go").setup()
+
+			dap.listeners.before.attach.dapui_config = function()
+				dapui.open()
+			end
+			dap.listeners.before.launch.dapui_config = function()
+				dapui.open()
+			end
+			dap.listeners.before.event_terminated.dapui_config = function()
+				dapui.close()
+			end
+			dap.listeners.before.event_exited.dapui_config = function()
+				dapui.close()
+			end
+
+			vim.keymap.set("n", "dt", dap.toggle_breakpoint, {})
+			vim.keymap.set("n", "dc", dap.continue, {})
+		end,
 	},
 })
 
