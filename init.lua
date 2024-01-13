@@ -191,9 +191,22 @@ require("lazy").setup({
 			dap.listeners.before.event_exited.dapui_config = function()
 				dapui.close()
 			end
-
-			vim.keymap.set("n", "dt", dap.toggle_breakpoint, {})
-			vim.keymap.set("n", "dc", dap.continue, {})
+			vim.keymap.set("n", "sb", function()
+				dap.toggle_breakpoint()
+			end)
+			vim.keymap.set("n", "sc", dap.continue, {})
+			vim.keymap.set({ "n", "v" }, "sh", function()
+				require("dap.ui.widgets").hover()
+			end)
+			vim.keymap.set("n", "so", function()
+				dap.step_over()
+			end)
+			vim.keymap.set("n", "si", function()
+				dap.step_into()
+			end)
+			vim.keymap.set("n", "sr", function()
+				dap.repl.open()
+			end)
 		end,
 	},
 })
