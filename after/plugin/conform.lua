@@ -24,3 +24,12 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		require("conform").format({ bufnr = args.buf })
 	end,
 })
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	pattern = { "*.go" },
+	desc = "Remove unused imports after saving",
+	callback = function()
+		local fileName = vim.api.nvim_buf_get_name(0)
+		vim.cmd(":silent !goimports-reviser -rm-unused " .. fileName)
+	end,
+})
