@@ -37,6 +37,9 @@ vim.opt.signcolumn = "yes"
 vim.opt.colorcolumn = "80"
 vim.g.highlightedyank_highlight_duration = 200
 
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 20
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -82,14 +85,14 @@ require("lazy").setup({
 			require("Comment").setup()
 		end,
 	},
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-		opts = {},
-		config = function()
-			require("ibl").setup()
-		end,
-	},
+	-- {
+	-- 	"lukas-reineke/indent-blankline.nvim",
+	-- 	main = "ibl",
+	-- 	opts = {},
+	-- 	config = function()
+	-- 		require("ibl").setup()
+	-- 	end,
+	-- },
 	{ "dnlhc/glance.nvim" },
 	{
 		"folke/trouble.nvim",
@@ -117,14 +120,14 @@ require("lazy").setup({
 		},
 	},
 	-- { "rafamadriz/friendly-snippets" },
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"MunifTanjim/nui.nvim",
-		},
-	},
+	-- {
+	-- 	"nvim-neo-tree/neo-tree.nvim",
+	-- 	branch = "v3.x",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"MunifTanjim/nui.nvim",
+	-- 	},
+	-- },
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
