@@ -78,3 +78,20 @@ end)
 vim.cmd([[
 nnoremap <leader>fw :execute 'Telescope live_grep  default_text=' . expand('<cword>')<cr>
 ]])
+
+-- vim.cmd([[
+-- let g:netrw_active = 1
+-- function! Togglenetrw()
+--     if g:netrw_active
+--         Explore
+--         let g:netrw_active = 0
+--     else
+--         " This is the name of the buffer
+--         " bd NetrwTreeListing
+-- 		bd
+--         let g:netrw_active = 1
+--     endif
+--     return 1
+-- endfunction
+-- nnoremap <silent> <C-f> :call Togglenetrw()<CR>
+-- ]])

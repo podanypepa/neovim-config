@@ -39,6 +39,7 @@ vim.g.highlightedyank_highlight_duration = 200
 
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 20
+vim.g.netrw_fastbrowse = 2
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
