@@ -56,6 +56,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{ "folke/neodev.nvim", opts = {} },
+	{ "github/copilot.vim" },
 	{ "ellisonleao/gruvbox.nvim", priority = 1000 },
 	{ "projekt0n/github-nvim-theme" },
 	-- { "mhartington/formatter.nvim" },
