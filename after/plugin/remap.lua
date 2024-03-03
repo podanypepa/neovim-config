@@ -106,3 +106,5 @@ vim.keymap.set("t", "<C-l>", "<C-w>l")
 vim.keymap.set("t", "<C-j>", "<C-w>j")
 vim.keymap.set("t", "<C-k>", "<C-w>k")
 vim.api.nvim_set_keymap("t", "<Leader><ESC>", "<C-\\><C-n>", { noremap = true })
+
+vim.keymap.set("n", "gd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", { noremap = true })
