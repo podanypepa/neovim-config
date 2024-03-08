@@ -34,7 +34,8 @@ vim.o.incsearch = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.opt.signcolumn = "yes"
-vim.opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "99"
 vim.g.highlightedyank_highlight_duration = 200
 
 vim.g.netrw_banner = 0
@@ -115,7 +116,8 @@ require("lazy").setup({
 			-- Autocompletion
 			{ "hrsh7th/nvim-cmp", event = "InsertEnter" }, -- Required
 			{ "hrsh7th/cmp-nvim-lsp" }, -- Required
-			{ "hrsh7th/cmp-path" },
+			-- { "hrsh7th/cmp-path" },
+			{ "FelipeLema/cmp-async-path" },
 			{ "hrsh7th/cmp-buffer" },
 			{ "L3MON4D3/LuaSnip" }, -- Required
 			{ "hrsh7th/cmp-nvim-lua" },

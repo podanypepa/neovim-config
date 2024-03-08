@@ -4,11 +4,18 @@ local cmp_select_opts = { behavior = cmp.SelectBehavior.Select }
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
+require("cmp").setup({
+	sources = {
+		{ name = "async_path" },
+	},
+})
+
 cmp.setup({
 	enabled = true,
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "path" },
+		{ name = "async_path" },
 		{ name = "buffer" },
 		{ name = "nvim_lua" },
 	},
