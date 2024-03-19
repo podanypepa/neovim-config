@@ -64,13 +64,13 @@ require("lazy").setup({
 	{
 		"stevearc/conform.nvim",
 		opts = {},
-		event = { "BufReadPre", "BufNewFile" },
+		-- event = { "BufReadPre", "BufNewFile" },
 	},
 	{ "machakann/vim-highlightedyank" },
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
 	{ "neovim/nvim-lspconfig" },
-	{ "nvim-treesitter/nvim-treesitter", event = { "BufReadPre", "BufNewFile" } },
+	{ "nvim-treesitter/nvim-treesitter" },
 	{ "moll/vim-bbye" },
 	{ "kyazdani42/nvim-web-devicons" },
 	{
@@ -83,7 +83,7 @@ require("lazy").setup({
 	{ "lewis6991/gitsigns.nvim" },
 	{
 		"numToStr/Comment.nvim",
-		event = { "BufReadPre", "BufNewFile" },
+		-- event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("Comment").setup()
 		end,
@@ -226,6 +226,7 @@ require("lazy").setup({
 			})
 		end,
 	},
+	{ "nvim-neotest/nvim-nio" },
 	{
 		"mfussenegger/nvim-dap",
 		dependencies = {

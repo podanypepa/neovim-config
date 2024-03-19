@@ -14,6 +14,8 @@ require("nvim-treesitter.configs").setup({
 		"markdown",
 		"html",
 	},
+	ignore_install = {},
+	modules = {},
 
 	sync_install = false,
 	auto_install = true,
