@@ -88,14 +88,6 @@ require("lazy").setup({
 			require("Comment").setup()
 		end,
 	},
-	-- {
-	-- 	"lukas-reineke/indent-blankline.nvim",
-	-- 	main = "ibl",
-	-- 	opts = {},
-	-- 	config = function()
-	-- 		require("ibl").setup()
-	-- 	end,
-	-- },
 	{ "dnlhc/glance.nvim" },
 	{
 		"folke/trouble.nvim",
@@ -227,7 +219,6 @@ require("lazy").setup({
 		end,
 	},
 	{ "nvim-neotest/nvim-nio" },
-	{ "ThePrimeagen/harpoon" },
 	{
 		"mfussenegger/nvim-dap",
 		dependencies = {
