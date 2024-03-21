@@ -17,7 +17,8 @@ vim.diagnostic.config({
 		border = "rounded",
 		-- source = "always", -- Or "if_many"
 	},
-	underline = true,
+	-- underline = true,
+	underline = false,
 })
 
 -- additional filetypes

@@ -58,7 +58,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{ "folke/neodev.nvim", opts = {} },
 	{ "github/copilot.vim" },
-	{ "ellisonleao/gruvbox.nvim", priority = 1000 },
+	-- { "ellisonleao/gruvbox.nvim", priority = 1000 },
 	{ "projekt0n/github-nvim-theme" },
 	-- { "mhartington/formatter.nvim" },
 	{
@@ -162,10 +162,10 @@ require("lazy").setup({
 			},
 		},
 	},
-	{
-		"nvim-lualine/lualine.nvim",
-		requires = { "nvim-tree/nvim-web-devicons", opt = true },
-	},
+	-- {
+	-- 	"nvim-lualine/lualine.nvim",
+	-- 	requires = { "nvim-tree/nvim-web-devicons", opt = true },
+	-- },
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
@@ -227,14 +227,7 @@ require("lazy").setup({
 		end,
 	},
 	{ "nvim-neotest/nvim-nio" },
-	{
-		"otavioschwanck/arrow.nvim",
-		opts = {
-			show_icons = true,
-			leader_key = ";", -- Recommended to be a single key
-		},
-	},
-	-- { "ThePrimeagen/harpoon" },
+	{ "ThePrimeagen/harpoon" },
 	{
 		"mfussenegger/nvim-dap",
 		dependencies = {
@@ -279,3 +272,5 @@ require("lazy").setup({
 		end,
 	},
 })
+
+vim.api.nvim_set_hl(0, "Comment", { italic = true })

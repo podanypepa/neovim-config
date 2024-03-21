@@ -48,6 +48,14 @@ vim.keymap.set("n", "R", function()
 	require("trouble").open("lsp_references")
 end)
 
+vim.keymap.set("n", "Ha", function()
+	require("harpoon.mark").add_file()
+end)
+
+vim.keymap.set("n", "<leader>hh", function()
+	require("harpoon.mark").toggle_file()
+end, { noremap = true })
+
 -- Telescope remaping
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
