@@ -228,6 +228,14 @@ require("lazy").setup({
 	},
 	{ "nvim-neotest/nvim-nio" },
 	{
+		"otavioschwanck/arrow.nvim",
+		opts = {
+			show_icons = true,
+			leader_key = ";", -- Recommended to be a single key
+		},
+	},
+	-- { "ThePrimeagen/harpoon" },
+	{
 		"mfussenegger/nvim-dap",
 		dependencies = {
 			"rcarriga/nvim-dap-ui",
