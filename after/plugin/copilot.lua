@@ -42,7 +42,7 @@ require("copilot").setup({
 		hgcommit = true,
 		svn = false,
 		cvs = false,
-		-- ["."] = false,
+		["."] = false,
 	},
 	copilot_node_command = "node", -- Node.js version must be > 18.x
 	server_opts_overrides = {},
