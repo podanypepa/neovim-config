@@ -1,6 +1,6 @@
 local lsp = require("lsp-zero").preset({})
 local config = require("lspconfig")
--- lsp.preset("recommended")
+lsp.preset("recommended")
 
 -- local lsp = require("lsp-zero").preset({})
 
