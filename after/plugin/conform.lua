@@ -25,11 +25,19 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-	pattern = { "*.go" },
-	desc = "Remove unused imports after saving",
-	callback = function()
-		local fileName = vim.api.nvim_buf_get_name(0)
-		vim.cmd(":silent !goimports-reviser -rm-unused " .. fileName)
-	end,
+-- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+-- 	pattern = { "*.go" },
+-- 	desc = "Remove unused imports after saving",
+-- 	callback = function()
+-- 		local fileName = vim.api.nvim_buf_get_name(0)
+-- 		vim.cmd(":silent !goimports-reviser -rm-unused " .. fileName)
+-- 	end,
+-- })
+
+require("conform").setup({
+	format_on_save = {
+		-- These options will be passed to conform.format()
+		timeout_ms = 500,
+		lsp_fallback = true,
+	},
 })

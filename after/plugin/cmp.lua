@@ -12,7 +12,9 @@ require("cmp").setup({
 
 cmp.setup({
 	enabled = true,
+	-- experimental = { native_menu = false, ghost_text = true },
 	sources = {
+		{ name = "copilot" },
 		{ name = "nvim_lsp" },
 		{ name = "path" },
 		{ name = "async_path" },
