@@ -8,11 +8,24 @@ local function git_branch()
 end
 
 local function statusline()
-	local set_color_1 = "%#PmenuSel#"
 	local branch = git_branch()
+
+	-- old colors
+	local set_color_1 = "%#PmenuSel#"
 	local set_color_2 = "%#LineNr#"
+
+	-- my new colors
+	vim.api.nvim_set_hl(0, "MyRedBranche", { ctermfg = "red", ctermbg = "black", fg = "red", bg = "black" })
+	vim.api.nvim_set_hl(0, "MyGreenBranche", { ctermfg = "green", ctermbg = "black", fg = "lightgreen", bg = "black" })
+
+	if branch == "main" then
+		set_color_1 = "%#MyRedBranche#"
+	else
+		set_color_1 = "%#MyGreenBranche#"
+	end
+
 	local file_name = " %F"
-	local modified = "%m"
+	local modified = " %m"
 	local align_right = "%="
 	local fileencoding = " %{&fileencoding?&fileencoding:&encoding}"
 	local fileformat = " [%{&fileformat}]"
