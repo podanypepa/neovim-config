@@ -15,14 +15,16 @@ local function statusline()
 	local set_color_2 = "%#LineNr#"
 
 	-- my new colors
-	vim.api.nvim_set_hl(0, "MyRedBranche", { ctermfg = "red", ctermbg = "black", fg = "red", bg = "black" })
-	vim.api.nvim_set_hl(0, "MyGreenBranche", { ctermfg = "green", ctermbg = "black", fg = "lightgreen", bg = "black" })
+	vim.api.nvim_set_hl(0, "MyRedBranche", { ctermfg = "red", ctermbg = "none", fg = "red", bg = "none" })
+	vim.api.nvim_set_hl(0, "MyGreenBranche", { ctermfg = "green", ctermbg = "none", fg = "lightgreen", bg = "none" })
+	vim.api.nvim_set_hl(0, "MyFileName", { ctermfg = "lightyellow", ctermbg = "none", fg = "lightyellow", bg = "none" })
 
 	if branch == "main" then
 		set_color_1 = "%#MyRedBranche#"
 	else
 		set_color_1 = "%#MyGreenBranche#"
 	end
+	set_color_2 = "%#MyFileName#"
 
 	local file_name = " %F"
 	local modified = " %m"

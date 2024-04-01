@@ -1,8 +1,8 @@
 vim.g.mapleader = " "
 vim.keymap.set("v", "K", ":m  '>-2<CR>gv=gv")
 vim.keymap.set("v", "J", ":m  '>+1<CR>gv=gv")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- vim.keymap.set("n", "<C-d>", "<C-d>zz")
+-- vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
@@ -98,14 +98,14 @@ nnoremap <leader>fw :execute 'Telescope live_grep  default_text=' . expand('<cwo
 -- ]])
 
 -- toggleterm
-vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>")
+-- vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>")
 
-local opts = { buffer = 0 }
-vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
-vim.keymap.set("t", "<C-h>", "<C-w>h")
-vim.keymap.set("t", "<C-l>", "<C-w>l")
-vim.keymap.set("t", "<C-j>", "<C-w>j")
-vim.keymap.set("t", "<C-k>", "<C-w>k")
-vim.api.nvim_set_keymap("t", "<Leader><ESC>", "<C-\\><C-n>", { noremap = true })
+-- local opts = { buffer = 0 }
+-- vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
+-- vim.keymap.set("t", "<C-h>", "<C-w>h")
+-- vim.keymap.set("t", "<C-l>", "<C-w>l")
+-- vim.keymap.set("t", "<C-j>", "<C-w>j")
+-- vim.keymap.set("t", "<C-k>", "<C-w>k")
+-- vim.api.nvim_set_keymap("t", "<Leader><ESC>", "<C-\\><C-n>", { noremap = true })
 
 vim.keymap.set("n", "gd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", { noremap = true })
