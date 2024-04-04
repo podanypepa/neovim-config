@@ -72,12 +72,12 @@ require("lazy").setup({
 	},
 	-- { "ellisonleao/gruvbox.nvim", priority = 1000 },
 	-- { "projekt0n/github-nvim-theme" },
-	-- { "mhartington/formatter.nvim" },
-	{
-		"stevearc/conform.nvim",
-		opts = {},
-		-- event = { "BufReadPre", "BufNewFile" },
-	},
+	{ "mhartington/formatter.nvim" },
+	-- {
+	-- 	"stevearc/conform.nvim",
+	-- 	opts = {},
+	-- 	-- event = { "BufReadPre", "BufNewFile" },
+	-- },
 	{ "machakann/vim-highlightedyank" },
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
