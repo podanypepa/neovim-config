@@ -14,8 +14,17 @@ require("formatter").setup({
 		rust = {
 			require("formatter.filetypes.rust").rustfmt,
 		},
+		-- json = {
+		-- 	require("formatter.filetypes.json").jq,
+		-- },
 		json = {
-			require("formatter.filetypes.json").jq,
+			function()
+				return {
+					exe = "jq",
+					args = { "--indent 4", "." },
+					stdin = true,
+				}
+			end,
 		},
 		javascript = {
 			require("formatter.filetypes.javascript").prettier,
