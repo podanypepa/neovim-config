@@ -14,9 +14,6 @@ require("formatter").setup({
 		rust = {
 			require("formatter.filetypes.rust").rustfmt,
 		},
-		-- json = {
-		-- 	require("formatter.filetypes.json").jq,
-		-- },
 		json = {
 			function()
 				return {
