@@ -24,8 +24,8 @@ vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("n", "<leader>ex", ":25Lexplore %:p:h<CR>")
 vim.keymap.set("n", "F", ":Format<CR>")
-vim.keymap.set("n", "<C-e>", ":Neotree toggle<CR>")
--- vim.keymap.set("n", "<C-e>", ":Explore<CR>")
+-- vim.keymap.set("n", "<C-e>", ":Neotree toggle<CR>")
+vim.keymap.set("n", "<C-e>", ":Explore<CR>")
 vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+Y')
@@ -109,3 +109,9 @@ nnoremap <leader>fw :execute 'Telescope live_grep  default_text=' . expand('<cwo
 -- vim.api.nvim_set_keymap("t", "<Leader><ESC>", "<C-\\><C-n>", { noremap = true })
 
 vim.keymap.set("n", "gd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", { noremap = true })
+
+vim.keymap.set("n", "gt", function()
+	vim.lsp.buf.type_definition()
+end, {})
+
+vim.keymap.set("n", "xr", ":call VrcQuery()<cr>")
