@@ -9,7 +9,6 @@ require("cmp").setup({
 		{ name = "async_path" },
 	},
 })
-
 cmp.setup({
 	enabled = true,
 	-- experimental = { native_menu = false, ghost_text = true },
@@ -50,7 +49,7 @@ cmp.setup({
 		end,
 	},
 	window = {
-		completion = cmp.config.window.bordered(),
+		completion = cmp.config.window.bordered({}),
 		documentation = cmp.config.window.bordered(),
 		-- documentation = {
 		-- 	max_height = 15,
