@@ -73,11 +73,6 @@ require("lazy").setup({
 	-- { "ellisonleao/gruvbox.nvim", priority = 1000 },
 	-- { "projekt0n/github-nvim-theme" },
 	{ "mhartington/formatter.nvim" },
-	-- {
-	-- 	"stevearc/conform.nvim",
-	-- 	opts = {},
-	-- 	-- event = { "BufReadPre", "BufNewFile" },
-	-- },
 	{ "machakann/vim-highlightedyank" },
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
@@ -133,18 +128,6 @@ require("lazy").setup({
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
-	-- "dharmx/track.nvim",
-	-- {
-	-- 	"nvim-neo-tree/neo-tree.nvim",
-	-- 	branch = "v3.x",
-	-- 	dependencies = {
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		"3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-	-- 	},
-	-- },
-	-- { "rafamadriz/friendly-snippets" },
 	-- {
 	-- 	"folke/todo-comments.nvim",
 	-- 	dependencies = { "nvim-lua/plenary.nvim" },
@@ -173,71 +156,11 @@ require("lazy").setup({
 	-- 		},
 	-- 	},
 	-- },
-	-- {
-	-- 	"nvim-lualine/lualine.nvim",
-	-- 	requires = { "nvim-tree/nvim-web-devicons", opt = true },
-	-- },
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
-	-- {
-	-- 	"sontungexpt/url-open",
-	-- 	event = "VeryLazy",
-	-- 	cmd = "URLOpenUnderCursor",
-	-- 	config = function()
-	-- 		local status_ok, url_open = pcall(require, "url-open")
-	-- 		if not status_ok then
-	-- 			return
-	-- 		end
-	-- 		url_open.setup({})
-	-- 	end,
-	-- },
-	-- { "akinsho/toggleterm.nvim", version = "*", config = true },
-	-- {
-	-- 	"2kabhishek/termim.nvim",
-	-- 	cmd = { "Fterm", "FTerm", "Sterm", "STerm", "Vterm", "VTerm" },
-	-- },
-	-- {
-	-- 	"jackMort/ChatGPT.nvim",
-	-- 	event = "VeryLazy",
-	-- 	config = function()
-	-- 		require("chatgpt").setup()
-	-- 	end,
-	-- 	dependencies = {
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"folke/trouble.nvim",
-	-- 		"nvim-telescope/telescope.nvim",
-	-- 	},
-	-- },
 	{ "vrischmann/tree-sitter-templ" },
-	-- {
-	-- 	"rmagatti/goto-preview",
-	-- 	config = function()
-	-- 		require("goto-preview").setup({
-	-- 			width = 120, -- Width of the floating window
-	-- 			height = 15, -- Height of the floating window
-	-- 			border = { "↖", "─", "┐", "│", "┘", "─", "└", "│" }, -- Border characters of the floating window
-	-- 			default_mappings = true,
-	-- 			debug = false, -- Print debug information
-	-- 			opacity = nil, -- 0-100 opacity level of the floating window where 100 is fully transparent.
-	-- 			resizing_mappings = false, -- Binds arrow keys to resizing the floating window.
-	-- 			post_open_hook = nil, -- A function taking two arguments, a buffer and a window to be ran as a hook.
-	-- 			references = { -- Configure the telescope UI for slowing the references cycling window.
-	-- 				telescope = require("telescope.themes").get_dropdown({ hide_preview = false }),
-	-- 			},
-	-- 			-- These two configs can also be passed down to the goto-preview definition and implementation calls for one off "peak" functionality.
-	-- 			focus_on_open = true, -- Focus the floating window when opening it.
-	-- 			dismiss_on_move = false, -- Dismiss the floating window when moving the cursor.
-	-- 			force_close = true, -- passed into vim.api.nvim_win_close's second argument. See :h nvim_win_close
-	-- 			bufhidden = "wipe", -- the bufhidden option to set on the floating window. See :h bufhidden
-	-- 			stack_floating_preview_windows = true, -- Whether to nest floating windows
-	-- 			preview_window_title = { enable = true, position = "left" }, -- Whether
-	-- 		})
-	-- 	end,
-	-- },
-	-- { "nvim-neotest/nvim-nio" },
 	-- {
 	-- 	"mfussenegger/nvim-dap",
 	-- 	dependencies = {
