@@ -58,18 +58,38 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{ "folke/neodev.nvim", opts = {} },
-	-- { "github/copilot.vim" },
 	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		event = "InsertEnter",
-	},
-	{
-		"zbirenbaum/copilot-cmp",
+		"NeogitOrg/neogit",
+		dependencies = {
+			"nvim-lua/plenary.nvim", -- required
+			"sindrets/diffview.nvim", -- optional - Diff integration
+
+			-- Only one of these is needed, not both.
+			"nvim-telescope/telescope.nvim", -- optional
+			"ibhagwan/fzf-lua", -- optional
+		},
 		config = function()
-			require("copilot_cmp").setup()
+			require("neogit").setup({
+				commit_view = {
+					kind = "split",
+					verify_commit = vim.fn.executable("gpg") == 1, -- Can be set to true or false, otherwise we try to find the binary
+				},
+			})
 		end,
 	},
+
+	-- { "github/copilot.vim" },
+	-- {
+	-- 	"zbirenbaum/copilot.lua",
+	-- 	cmd = "Copilot",
+	-- 	event = "InsertEnter",
+	-- },
+	-- {
+	-- 	"zbirenbaum/copilot-cmp",
+	-- 	config = function()
+	-- 		require("copilot_cmp").setup()
+	-- 	end,
+	-- },
 	-- { "ellisonleao/gruvbox.nvim", priority = 1000 },
 	-- { "projekt0n/github-nvim-theme" },
 	{ "mhartington/formatter.nvim" },
@@ -80,22 +100,22 @@ require("lazy").setup({
 	{ "nvim-treesitter/nvim-treesitter" },
 	{ "moll/vim-bbye" },
 	{ "kyazdani42/nvim-web-devicons" },
-	{ "diepm/vim-rest-console" },
+	-- { "diepm/vim-rest-console" },
 	{
 		"windwp/nvim-autopairs",
 		config = function()
-			require("nvim-autopairs").setup({})
+			require("nvim-autopairs").setup()
 		end,
 	},
-	{ "tpope/vim-fugitive" },
+	-- { "tpope/vim-fugitive" },
 	{ "lewis6991/gitsigns.nvim" },
-	{
-		"numToStr/Comment.nvim",
-		-- event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			require("Comment").setup()
-		end,
-	},
+	-- {
+	-- 	"numToStr/Comment.nvim",
+	-- 	-- event = { "BufReadPre", "BufNewFile" },
+	-- 	config = function()
+	-- 		require("Comment").setup()
+	-- 	end,
+	-- },
 	{ "dnlhc/glance.nvim" },
 	{
 		"folke/trouble.nvim",
@@ -103,6 +123,18 @@ require("lazy").setup({
 			-- position = "top",
 			-- padding = false,
 			padding = true,
+		},
+		keys = {
+			{
+				"<leader>td",
+				"<cmd>Trouble diagnostics toggle focus=true<cr>",
+				desc = "Diagnostics (Trouble)",
+			},
+			{
+				"R",
+				"<cmd>Trouble lsp_references toggle focus=true<cr>",
+				desc = "Diagnostics (Trouble)",
+			},
 		},
 	},
 	{
