@@ -4,11 +4,11 @@ local cmp_select_opts = { behavior = cmp.SelectBehavior.Select }
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
-require("cmp").setup({
-	sources = {
-		{ name = "async_path" },
-	},
-})
+-- require("cmp").setup({
+-- 	sources = {
+-- 		{ name = "async_path" },
+-- 	},
+-- })
 cmp.setup({
 	enabled = true,
 	-- experimental = { native_menu = false, ghost_text = true },
@@ -19,6 +19,7 @@ cmp.setup({
 		{ name = "async_path" },
 		{ name = "buffer" },
 		{ name = "nvim_lua" },
+		{ name = "async_path" },
 	},
 	mapping = {
 		["<C-y>"] = cmp.mapping.confirm({ select = true }),

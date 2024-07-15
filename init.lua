@@ -139,17 +139,14 @@ require("lazy").setup({
 	},
 	{
 		"VonHeikemen/lsp-zero.nvim",
-		branch = "v2.x",
+		-- branch = "v2.x",
+		branch = "v4.x",
 		dependencies = {
-			-- LSP Support
 			{ "neovim/nvim-lspconfig" }, -- Required
 			{ "williamboman/mason.nvim" }, -- Optional
 			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
-
-			-- Autocompletion
 			{ "hrsh7th/nvim-cmp", event = "InsertEnter" }, -- Required
 			{ "hrsh7th/cmp-nvim-lsp" }, -- Required
-			-- { "hrsh7th/cmp-path" },
 			{ "FelipeLema/cmp-async-path" },
 			{ "hrsh7th/cmp-buffer" },
 			{ "L3MON4D3/LuaSnip" }, -- Required
