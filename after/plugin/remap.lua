@@ -1,8 +1,6 @@
 vim.g.mapleader = " "
 vim.keymap.set("v", "K", ":m  '>-2<CR>gv=gv")
 vim.keymap.set("v", "J", ":m  '>+1<CR>gv=gv")
--- vim.keymap.set("n", "<C-d>", "<C-d>zz")
--- vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
@@ -18,13 +16,12 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<Esc><Esc>", ":nohlsearch<CR>")
 vim.keymap.set("n", "[e", "<cmd>lua vim.diagnostic.goto_prev({severity = vim.diagnostic.severity.ERROR})<CR>")
 vim.keymap.set("n", "]e", "<cmd>lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<CR>")
-vim.keymap.set("n", "<Leader>bd", ":Bdelete<CR>")
+vim.keymap.set("n", "<Leader>bd", ":bdelete<CR>")
 vim.keymap.set("n", "<silent><C-]>", "<cmd>lua vim.lsp.buf.definition()<CR>")
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("n", "<leader>ex", ":25Lexplore %:p:h<CR>")
 vim.keymap.set("n", "F", ":Format<CR>")
--- vim.keymap.set("n", "<C-e>", ":Neotree toggle<CR>")
 vim.keymap.set("n", "<C-e>", ":Explore<CR>")
 vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
@@ -36,17 +33,8 @@ vim.keymap.set("n", "gx", "<esc>:URLOpenUnderCursor<cr>")
 vim.keymap.set("v", "p", '"_dP')
 vim.keymap.set("n", "<leader>h", "<cmd>cnext<CR>zz", { desc = "Forward qfixlist" })
 vim.keymap.set("n", "<leader>;", "<cmd>cprev<CR>zz", { desc = "Backward qfixlist" })
-vim.keymap.set("n", "<leader>q", "<cmd>Bdelete<CR>", { desc = "Close Buffer" })
+vim.keymap.set("n", "<leader>q", "<cmd>:bdelete<CR>", { desc = "Close Buffer" })
 vim.keymap.set("n", "<leader>cp", '<cmd>let @+ = expand("%:p")<CR>', { desc = "Copy File Path" })
-
--- vim.keymap.set("n", "R", "<CMD>Glance references<CR>")
--- vim.keymap.set("n", "gR", function()
--- 	require("trouble").open("lsp_references")
--- end)
--- vim.keymap.set("n", "gR", "<CMD>Glance references<CR>")
--- vim.keymap.set("n", "R", function()
--- 	require("trouble").open("lsp_references")
--- end)
 
 -- Telescope remaping
 local builtin = require("telescope.builtin")
@@ -80,38 +68,6 @@ vim.cmd([[
 nnoremap <leader>fw :execute 'Telescope live_grep  default_text=' . expand('<cword>')<cr>
 ]])
 
--- vim.cmd([[
--- let g:netrw_active = 1
--- function! Togglenetrw()
---     if g:netrw_active
---         Explore
---         let g:netrw_active = 0
---     else
---         " This is the name of the buffer
---         " bd NetrwTreeListing
--- 		bd
---         let g:netrw_active = 1
---     endif
---     return 1
--- endfunction
--- nnoremap <silent> <C-f> :call Togglenetrw()<CR>
--- ]])
-
--- toggleterm
--- vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>")
-
--- local opts = { buffer = 0 }
--- vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
--- vim.keymap.set("t", "<C-h>", "<C-w>h")
--- vim.keymap.set("t", "<C-l>", "<C-w>l")
--- vim.keymap.set("t", "<C-j>", "<C-w>j")
--- vim.keymap.set("t", "<C-k>", "<C-w>k")
--- vim.api.nvim_set_keymap("t", "<Leader><ESC>", "<C-\\><C-n>", { noremap = true })
-
-vim.keymap.set("n", "gd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", { noremap = true })
-
 vim.keymap.set("n", "gt", function()
 	vim.lsp.buf.type_definition()
 end, {})
-
--- vim.keymap.set("n", "xr", ":call VrcQuery()<cr>")

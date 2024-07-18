@@ -1,5 +1,4 @@
 vim.loader.enable()
-vim.o.background = "dark"
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.loaded_python3_provider = 0
@@ -38,201 +37,76 @@ vim.opt.signcolumn = "yes"
 -- vim.opt.colorcolumn = "80"
 vim.opt.colorcolumn = "99"
 vim.g.highlightedyank_highlight_duration = 200
-
 vim.g.netrw_banner = 0
 -- vim.g.netrw_winsize = 20
 vim.g.netrw_fastbrowse = 0
+vim.api.nvim_set_hl(0, "Comment", { italic = true })
+
+vim.o.background = "dark"
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
+vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { fg = "gray", bg = "none" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "Orange1", bg = "none" })
+
+vim.cmd([[
+highlight clear SignColumn
+"hi CursorLineNr guibg=none
+hi DiagnosticSignWarn guifg=orange ctermbg=none
+hi DiagnosticSignError guifg=red ctermbg=none
+hi DiagnosticSignInfo guifg=Blue ctermbg=none
+hi DiagnosticSignHint guifg=gray ctermbg=none
+hi GitSignsAdd guifg=Green3 guibg=none
+hi GitSignsChange guifg=Yellow2 guibg=none
+hi GitSignsDelete guifg=OrangeRed1 guibg=none
+hi Pmenu guibg=NONE ctermbg=none
+hi WinSeparator guibg=NONE
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+]])
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+	if vim.v.shell_error ~= 0 then
+		vim.api.nvim_echo({
+			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+			{ out,                            "WarningMsg" },
+			{ "\nPress any key to exit..." },
+		}, true, {})
+		vim.fn.getchar()
+		os.exit(1)
+	end
 end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{ "folke/neodev.nvim", opts = {} },
-	{
-		"NeogitOrg/neogit",
-		dependencies = {
-			"nvim-lua/plenary.nvim", -- required
-			"sindrets/diffview.nvim", -- optional - Diff integration
-
-			-- Only one of these is needed, not both.
-			"nvim-telescope/telescope.nvim", -- optional
-			"ibhagwan/fzf-lua", -- optional
+	spec = {
+		{ import = "plugins" },
+	},
+	checker = { enabled = false },
+	change_detection = { enabled = false },
+	performance = {
+		cache = {
+			enabled = true,
 		},
-		config = function()
-			require("neogit").setup({
-				commit_view = {
-					kind = "split",
-					verify_commit = vim.fn.executable("gpg") == 1, -- Can be set to true or false, otherwise we try to find the binary
-				},
-			})
-		end,
+		reset_packpath = true,
+		rtp = {
+			reset = true,
+		}
 	},
-
-	-- { "github/copilot.vim" },
-	-- {
-	-- 	"zbirenbaum/copilot.lua",
-	-- 	cmd = "Copilot",
-	-- 	event = "InsertEnter",
-	-- },
-	-- {
-	-- 	"zbirenbaum/copilot-cmp",
-	-- 	config = function()
-	-- 		require("copilot_cmp").setup()
-	-- 	end,
-	-- },
-	-- { "ellisonleao/gruvbox.nvim", priority = 1000 },
-	-- { "projekt0n/github-nvim-theme" },
-	{ "mhartington/formatter.nvim" },
-	{ "machakann/vim-highlightedyank" },
-	{ "williamboman/mason.nvim" },
-	{ "williamboman/mason-lspconfig.nvim" },
-	{ "neovim/nvim-lspconfig" },
-	{ "nvim-treesitter/nvim-treesitter" },
-	{ "moll/vim-bbye" },
-	{ "kyazdani42/nvim-web-devicons" },
-	-- { "diepm/vim-rest-console" },
-	{
-		"windwp/nvim-autopairs",
-		config = function()
-			require("nvim-autopairs").setup()
-		end,
+	ui = {
+		size = { width = 0.9, height = 0.8 },
+		border = "rounded",
 	},
-	-- { "tpope/vim-fugitive" },
-	{ "lewis6991/gitsigns.nvim" },
-	-- {
-	-- 	"numToStr/Comment.nvim",
-	-- 	-- event = { "BufReadPre", "BufNewFile" },
-	-- 	config = function()
-	-- 		require("Comment").setup()
-	-- 	end,
-	-- },
-	{ "dnlhc/glance.nvim" },
-	{
-		"folke/trouble.nvim",
-		opts = {
-			-- position = "top",
-			-- padding = false,
-			padding = true,
-		},
-		keys = {
-			{
-				"<leader>td",
-				"<cmd>Trouble diagnostics toggle focus=true<cr>",
-				desc = "Diagnostics (Trouble)",
-			},
-			{
-				"R",
-				"<cmd>Trouble lsp_references toggle focus=true<cr>",
-				desc = "Diagnostics (Trouble)",
-			},
-		},
-	},
-	{
-		"VonHeikemen/lsp-zero.nvim",
-		-- branch = "v2.x",
-		branch = "v4.x",
-		dependencies = {
-			{ "neovim/nvim-lspconfig" }, -- Required
-			{ "williamboman/mason.nvim" }, -- Optional
-			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
-			{ "hrsh7th/nvim-cmp", event = "InsertEnter" }, -- Required
-			{ "hrsh7th/cmp-nvim-lsp" }, -- Required
-			{ "FelipeLema/cmp-async-path" },
-			{ "hrsh7th/cmp-buffer" },
-			{ "L3MON4D3/LuaSnip" }, -- Required
-			{ "hrsh7th/cmp-nvim-lua" },
-		},
-	},
-	{
-		"nvim-telescope/telescope.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
-	-- {
-	-- 	"folke/todo-comments.nvim",
-	-- 	dependencies = { "nvim-lua/plenary.nvim" },
-	-- 	-- TODO: pepa
-	-- 	opts = {
-	-- 		signs = true,
-	-- 		gui_style = {
-	-- 			fg = "NONE", -- The gui style to use for the fg highlight group.
-	-- 			bg = "BOLD", -- The gui style to use for the bg highlight group.
-	-- 		},
-	-- 		keywords = {
-	-- 			TODO = {
-	-- 				color = "#DC2626",
-	-- 			},
-	-- 			NOTE = {
-	-- 				color = "test",
-	-- 			},
-	-- 		},
-	-- 		colors = {
-	-- 			error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
-	-- 			warning = { "DiagnosticWarn", "WarningMsg", "#FBBF24" },
-	-- 			info = { "DiagnosticInfo", "#2563EB" },
-	-- 			hint = { "DiagnosticHint", "#10B981" },
-	-- 			default = { "Identifier", "#7C3AED" },
-	-- 			test = { "Identifier", "#FF00FF" },
-	-- 		},
-	-- 	},
-	-- },
-	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
-	{ "vrischmann/tree-sitter-templ" },
-	-- {
-	-- 	"mfussenegger/nvim-dap",
-	-- 	dependencies = {
-	-- 		"rcarriga/nvim-dap-ui",
-	-- 		"leoluz/nvim-dap-go",
-	-- 	},
-	-- 	config = function()
-	-- 		local dap = require("dap")
-	-- 		local dapui = require("dapui")
-	--
-	-- 		dapui.setup()
-	-- 		require("dap-go").setup()
-	--
-	-- 		dap.listeners.before.attach.dapui_config = function()
-	-- 			dapui.open()
-	-- 		end
-	-- 		dap.listeners.before.launch.dapui_config = function()
-	-- 			dapui.open()
-	-- 		end
-	-- 		dap.listeners.before.event_terminated.dapui_config = function()
-	-- 			dapui.close()
-	-- 		end
-	-- 		dap.listeners.before.event_exited.dapui_config = function()
-	-- 			dapui.close()
-	-- 		end
-	-- 		vim.keymap.set("n", "sb", function()
-	-- 			dap.toggle_breakpoint()
-	-- 		end)
-	-- 		vim.keymap.set("n", "sc", dap.continue, {})
-	-- 		vim.keymap.set({ "n", "v" }, "sh", function()
-	-- 			require("dap.ui.widgets").hover()
-	-- 		end)
-	-- 		vim.keymap.set("n", "so", function()
-	-- 			dap.step_over()
-	-- 		end)
-	-- 		vim.keymap.set("n", "si", function()
-	-- 			dap.step_into()
-	-- 		end)
-	-- 		vim.keymap.set("n", "sr", function()
-	-- 			dap.repl.open()
-	-- 		end)
-	-- 	end,
-	-- },
 })
 
-vim.api.nvim_set_hl(0, "Comment", { italic = true })
+vim.cmd([[
+augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=400}
+augroup END
+]])
