@@ -1,6 +1,5 @@
 return {
 	"folke/trouble.nvim",
-	lazy = true,
 	opts = {
 		-- position = "top",
 		-- padding = false,
