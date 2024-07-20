@@ -15,7 +15,6 @@ return {
 				-- { name = "copilot" },
 				{ name = "nvim_lsp" },
 				{ name = "path" },
-				{ name = "async_path" },
 				{ name = "buffer" },
 				{ name = "nvim_lua" },
 				{ name = "async_path" },
