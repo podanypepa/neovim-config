@@ -9,8 +9,6 @@ vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+Y')
 vim.keymap.set("n", "<Tab>", ":bn<CR>")
 vim.keymap.set("n", "<S-Tab>", ":bp<CR>")
-vim.keymap.set("n", "nc", ":Neogit commit<CR>")
-vim.keymap.set("n", "ng", ":Neogit<CR>")
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
@@ -29,7 +27,6 @@ vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+Y')
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
--- vim.keymap.set("n", "<leader>td", ":Trouble diagnostics toggle focus=true<CR>")
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 vim.keymap.set("n", "gx", "<esc>:URLOpenUnderCursor<cr>")
 vim.keymap.set("v", "p", '"_dP')
@@ -55,9 +52,16 @@ vim.keymap.set("n", "<Leader><Leader>", function()
 		layout_config = { width = 0.8 },
 	})
 end)
-vim.keymap.set("n", "<Leader>tR", function()
+vim.keymap.set("n", "R", function()
 	builtin.lsp_references({
 		layout_strategy = "vertical",
+		layout_config = { width = 0.8 },
+	})
+end)
+vim.keymap.set("n", "<leader>td", function()
+	builtin.diagnostics({
+		layout_strategy = "vertical",
+		layout_config = { width = 0.8 },
 	})
 end)
 vim.keymap.set("n", "<Leader>tg", function()
@@ -79,3 +83,6 @@ vim.keymap.set("n", "<c-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "TmuxNavigate
 vim.keymap.set("n", "<c-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "TmuxNavigateDown" })
 vim.keymap.set("n", "<c-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "TmuxNavigateDown" })
 vim.keymap.set("n", "<c-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "TmuxNavigateDown" })
+
+
+vim.api.nvim_set_keymap('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
