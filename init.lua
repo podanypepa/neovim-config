@@ -61,6 +61,8 @@ hi GitSignsChange guifg=Yellow2 guibg=none
 hi GitSignsDelete guifg=OrangeRed1 guibg=none
 hi Pmenu guibg=NONE ctermbg=none
 hi WinSeparator guibg=NONE
+"hi StatusLine guifg=lightgray guibg=none
+hi StatusLine guifg=orange guibg=none
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 let &t_ZH="\e[3m"
