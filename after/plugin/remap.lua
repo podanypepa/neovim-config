@@ -35,45 +35,6 @@ vim.keymap.set("n", "<leader>;", "<cmd>cprev<CR>zz", { desc = "Backward qfixlist
 vim.keymap.set("n", "<leader>q", "<cmd>:bdelete<CR>", { desc = "Close Buffer" })
 vim.keymap.set("n", "<leader>cp", '<cmd>let @+ = expand("%:p")<CR>', { desc = "Copy File Path" })
 
--- Telescope remaping
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-vim.keymap.set("n", "<leader>gf", builtin.git_files, {})
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
-vim.keymap.set("n", "<leader><Tab>", builtin.buffers, {})
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
-vim.keymap.set("n", "<leader>ts", function()
-	builtin.grep_string({ search = vim.fn.input("Grep > ") })
-end)
-vim.keymap.set("n", "<Leader><Leader>", function()
-	builtin.find_files({
-		layout_strategy = "vertical",
-		layout_config = { width = 0.8 },
-	})
-end)
-vim.keymap.set("n", "R", function()
-	builtin.lsp_references({
-		layout_strategy = "vertical",
-		layout_config = { width = 0.8 },
-	})
-end)
-vim.keymap.set("n", "<leader>td", function()
-	builtin.diagnostics({
-		layout_strategy = "vertical",
-		layout_config = { width = 0.8 },
-	})
-end)
-vim.keymap.set("n", "<Leader>tg", function()
-	builtin.grep_string({
-		layout_strategy = "vertical",
-		layout_config = { width = 0.8 },
-	})
-end)
-vim.cmd([[
-nnoremap <leader>fw :execute 'Telescope live_grep  default_text=' . expand('<cword>')<cr>
-]])
-
 vim.keymap.set("n", "gt", function()
 	vim.lsp.buf.type_definition()
 end, {})
@@ -84,5 +45,13 @@ vim.keymap.set("n", "<c-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "TmuxNavigate
 vim.keymap.set("n", "<c-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "TmuxNavigateDown" })
 vim.keymap.set("n", "<c-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "TmuxNavigateDown" })
 
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>do",
+	"<cmd>lua vim.diagnostic.open_float()<CR>",
+	{ noremap = true, silent = true }
+)
 
-vim.api.nvim_set_keymap('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>la", ":copen<CR>:AsyncRun make lintall<CR>", { desc = "make lintall" })
+vim.keymap.set("n", "<leader>lr", ":copen<CR>:AsyncRun revive ./...<CR>", { desc = "make lintall" })
+vim.keymap.set("n", "<leader>ll", ":copen<CR>:AsyncRun golangci-lint  run ./...<CR>", { desc = "make lintall" })
