@@ -3,14 +3,16 @@ return {
 	config = function()
 		require("darkvoid").setup({
 			transparent = false, -- set true for transparent
-			glow = true,      -- set true for glow effect
-			show_end_of_buffer = true, -- set false for not showing end of buffer
+			glow = true,       -- set true for glow effect
+			-- show_end_of_buffer = true, -- set false for not showing end of buffer
+			show_end_of_buffer = false, -- set false for not showing end of buffer
 
 			colors = {
 				fg = "#c0c0c0",
 				bg = "#000000",
 				-- bg = "#1c1c1c",
-				cursor = "#bdfe58",
+				cursor = "#000000",
+				-- cursor = "#bdfe58",
 				line_nr = "#404040",
 				visual = "#303030",
 				comment = "#585858",
