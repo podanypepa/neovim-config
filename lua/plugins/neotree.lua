@@ -44,6 +44,7 @@ return {
 						".DS_Store",
 					},
 				},
+				use_libuv_file_watcher = true,
 			},
 			buffers = {
 				follow_current_file = {
