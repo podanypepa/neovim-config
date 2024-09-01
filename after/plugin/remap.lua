@@ -56,3 +56,7 @@ vim.keymap.set("n", "<leader>lr", ":copen<CR>:AsyncRun revive ./...<CR>", { desc
 vim.keymap.set("n", "<leader>ll", ":copen<CR>:AsyncRun golangci-lint  run ./...<CR>", { desc = "make lintall" })
 
 vim.keymap.set("n", "<leader>ne", ":Neogit<CR>", { desc = "make lintall" })
+
+vim.keymap.set("n", "<leader>nf", ":Neotree filesystem reveal right<CR>", { desc = "Neotree" })
+vim.keymap.set("n", "<leader>nt", ":Neotree toggle<CR>", { desc = "Neotree" })
+vim.keymap.set("n", "<C-p>", ":Neotree toggle<CR>", { desc = "Neotree" })

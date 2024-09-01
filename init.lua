@@ -10,6 +10,7 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.laststatus = 3
+vim.opt.wrap = false
 vim.opt.clipboard = "unnamedplus"
 vim.g.nohlsearch = true
 vim.g.noerrorbells = true
