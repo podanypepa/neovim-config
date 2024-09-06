@@ -60,3 +60,6 @@ vim.keymap.set("n", "<leader>ne", ":Neogit<CR>", { desc = "make lintall" })
 vim.keymap.set("n", "<leader>nf", ":Neotree filesystem reveal right<CR>", { desc = "Neotree" })
 vim.keymap.set("n", "<leader>nt", ":Neotree toggle<CR>", { desc = "Neotree" })
 vim.keymap.set("n", "<C-p>", ":Neotree toggle<CR>", { desc = "Neotree" })
+
+vim.keymap.set("n", "n", "nzzzv", {})
+vim.keymap.set("n", "N", "Nzzzv", {})
