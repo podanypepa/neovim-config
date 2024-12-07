@@ -62,3 +62,11 @@ vim.keymap.set("n", "<C-p>", ":Neotree toggle<CR>", { desc = "Neotree" })
 
 vim.keymap.set("n", "n", "nzzzv", {})
 vim.keymap.set("n", "N", "Nzzzv", {})
+
+vim.keymap.set("n", "<leader>td", ":Trouble diagnostics<CR>", { desc = "Trouble diagnostic" })
+vim.keymap.set("n", "<leader>R", ":Trouble lsp_references<CR>", { desc = "Trouble lsp_references" })
+vim.keymap.set("n", "R", ":Trouble lsp_references<CR>", { desc = "Trouble lsp_references" })
+vim.keymap.set("n", "<leader>tr", ":Trouble lsp_references<CR>", { desc = "Trouble lsp_references" })
+-- vim.keymap.set("n", "K", function()
+-- 	vim.lsp.buf.hover()
+-- end, {})

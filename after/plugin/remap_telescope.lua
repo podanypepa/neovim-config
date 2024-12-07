@@ -15,18 +15,18 @@ vim.keymap.set("n", "<Leader><Leader>", function()
 		layout_config = { width = 0.8 },
 	})
 end)
-vim.keymap.set("n", "R", function()
-	builtin.lsp_references({
-		layout_strategy = "vertical",
-		layout_config = { width = 0.8 },
-	})
-end)
-vim.keymap.set("n", "<leader>td", function()
-	builtin.diagnostics({
-		layout_strategy = "vertical",
-		layout_config = { width = 0.8 },
-	})
-end)
+-- vim.keymap.set("n", "R", function()
+-- 	builtin.lsp_references({
+-- 		layout_strategy = "vertical",
+-- 		layout_config = { width = 0.8 },
+-- 	})
+-- end)
+-- vim.keymap.set("n", "<leader>td", function()
+-- 	builtin.diagnostics({
+-- 		layout_strategy = "vertical",
+-- 		layout_config = { width = 0.8 },
+-- 	})
+-- end)
 vim.keymap.set("n", "<Leader>tg", function()
 	builtin.grep_string({
 		layout_strategy = "vertical",
