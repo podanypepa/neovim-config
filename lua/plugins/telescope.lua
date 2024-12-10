@@ -31,7 +31,7 @@ return {
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<space>ec", function()
 			builtin.find_files({
-				cmd = vim.fn.stdpath("config"),
+				cwd = vim.fn.stdpath("config"),
 			})
 		end)
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
