@@ -10,11 +10,6 @@ return {
 		-- "ibhagwan/fzf-lua",        -- optional
 	},
 	config = function()
-		require("telescope").setup({
-			defaults = {
-				layout_strategy = "vertical",
-			},
-		})
 		require("neogit").setup({
 			commit_view = {
 				kind = "split",
