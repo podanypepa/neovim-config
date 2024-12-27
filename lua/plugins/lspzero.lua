@@ -2,11 +2,11 @@ return {
 	"VonHeikemen/lsp-zero.nvim",
 	branch = "v4.x",
 	dependencies = {
-		{ "neovim/nvim-lspconfig" },             -- Required
-		{ "williamboman/mason.nvim" },           -- Optional
-		{ "williamboman/mason-lspconfig.nvim" }, -- Optional
+		{ "neovim/nvim-lspconfig" },                             -- Required
+		{ "williamboman/mason.nvim" },                           -- Optional
+		{ "williamboman/mason-lspconfig.nvim" },                 -- Optional
 		{ "hrsh7th/nvim-cmp",                 event = "InsertEnter" }, -- Required
-		{ "hrsh7th/cmp-nvim-lsp" },              -- Required
+		{ "hrsh7th/cmp-nvim-lsp" },                              -- Required
 		{ "FelipeLema/cmp-async-path" },
 		{ "hrsh7th/cmp-buffer" },
 		{ "L3MON4D3/LuaSnip" }, -- Required
@@ -28,14 +28,17 @@ return {
 		local lsp_zero = require("lsp-zero")
 		local config = require("lspconfig")
 
-		lsp_zero.extend_lspconfig({
-			sign_text = true,
-			-- lsp_attach = lsp_attach,
-			-- capabilities = require("cmp_nvim_lsp").default_capabilities(),
-			float_border = "rounded",
-		})
+		-- local capabilities = require('blink.cmp').get_lsp_capabilities()
+		local capabilities =
+			require("cmp_nvim_lsp").default_capabilities(), lsp_zero.extend_lspconfig({
+				sign_text = true,
+				-- lsp_attach = lsp_attach,
+				-- capabilities = require("cmp_nvim_lsp").default_capabilities(),
+				float_border = "rounded",
+			})
 
 		require("lspconfig").lua_ls.setup({
+			capabilities = capabilities,
 			settings = {
 				Lua = {
 					format = {
@@ -54,6 +57,7 @@ return {
 			},
 		})
 		config.rust_analyzer.setup({
+			capabilities = capabilities,
 			settings = {
 				["rust-analyzer"] = {
 					diagnostics = {
@@ -63,13 +67,32 @@ return {
 			},
 		})
 		config.gopls.setup({
+			capabilities = capabilities,
 			settings = {
 				gopls = {
+					completeUnimported = true,
+					completionDocumentation = true,
+					hoverKind = "FullDocumentation",
+					usePlaceholders = true,
 					buildFlags = { "-tags=prod,local,dev,stage" },
+					hints = {
+						assignVariableTypes = true,
+						compositeLiteralFields = true,
+						compositeLiteralTypes = true,
+						constantValues = true,
+						functionTypeParameters = true,
+						parameterNames = true,
+						rangeVariableTypes = true,
+					},
+					analyses = {
+						unreachable = true,
+						unusedparams = true,
+					},
 				},
 			},
 			autostart = true,
 		})
+
 		lsp_zero.on_attach(function(client, bufnr)
 			local opts = { buffer = bufnr, remap = false }
 			-- see :help lsp-zero-keybindings

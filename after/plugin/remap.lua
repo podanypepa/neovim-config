@@ -71,8 +71,8 @@ vim.keymap.set("n", "<leader>tr", ":Trouble lsp_references<CR>", { desc = "Troub
 -- 	vim.lsp.buf.hover()
 -- end, {})
 
-vim.keymap.set("n", "<leader>qo", ":copen<CR>")
-vim.keymap.set("n", "<leader>qd", ":lua vim.diagnostic.setqflist()<CR>")
-vim.keymap.set("n", "<leader>qc", ":cclose<CR>")
-vim.keymap.set("n", "<leader>qn", "<cmd>cnext<CR>")
-vim.keymap.set("n", "<leader>qp", "<cmd>cprev<CR>")
+-- vim.keymap.set("n", "<leader>qo", ":copen<CR>")
+-- vim.keymap.set("n", "<leader>qd", ":lua vim.diagnostic.setqflist()<CR>")
+-- vim.keymap.set("n", "<leader>qc", ":cclose<CR>")
+-- vim.keymap.set("n", "<leader>qn", "<cmd>cnext<CR>")
+-- vim.keymap.set("n", "<leader>qp", "<cmd>cprev<CR>")

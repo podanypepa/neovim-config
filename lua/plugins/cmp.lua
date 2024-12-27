@@ -1,5 +1,6 @@
 return {
 	"hrsh7th/cmp-nvim-lua",
+	-- enabled = false,
 	lazy = true,
 	config = function()
 		local cmp = require("cmp")
