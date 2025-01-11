@@ -2,11 +2,11 @@ return {
 	"VonHeikemen/lsp-zero.nvim",
 	branch = "v4.x",
 	dependencies = {
-		{ "neovim/nvim-lspconfig" },                             -- Required
-		{ "williamboman/mason.nvim" },                           -- Optional
-		{ "williamboman/mason-lspconfig.nvim" },                 -- Optional
+		{ "neovim/nvim-lspconfig" },             -- Required
+		{ "williamboman/mason.nvim" },           -- Optional
+		{ "williamboman/mason-lspconfig.nvim" }, -- Optional
 		{ "hrsh7th/nvim-cmp",                 event = "InsertEnter" }, -- Required
-		{ "hrsh7th/cmp-nvim-lsp" },                              -- Required
+		{ "hrsh7th/cmp-nvim-lsp" },              -- Required
 		{ "FelipeLema/cmp-async-path" },
 		{ "hrsh7th/cmp-buffer" },
 		{ "L3MON4D3/LuaSnip" }, -- Required
@@ -91,6 +91,22 @@ return {
 				},
 			},
 			autostart = true,
+		})
+
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			pattern = "*.go",
+			callback = function()
+				local params = vim.lsp.util.make_range_params()
+				params.context = { only = { "source.organizeImports" } }
+				local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 1000)
+				for _, res in pairs(result or {}) do
+					for _, action in pairs(res.result or {}) do
+						if action.edit then
+							vim.lsp.util.apply_workspace_edit(action.edit, "utf-8")
+						end
+					end
+				end
+			end,
 		})
 
 		lsp_zero.on_attach(function(client, bufnr)

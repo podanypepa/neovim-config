@@ -113,3 +113,8 @@ augroup highlight_yank
     au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=400}
 augroup END
 ]])
+
+-- vim.opt.guicursor =
+-- "n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor,o:hor50-Cursor/lCursor"
+-- vim.api.nvim_set_hl(0, "Cursor", { fg = "NONE", bg = "yellow" })
+-- vim.api.nvim_set_hl(0, "lCursor", { fg = "NONE", bg = "#00ff00" })
