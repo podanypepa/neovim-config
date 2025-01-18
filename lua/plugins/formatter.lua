@@ -35,6 +35,15 @@ return {
 				css = {
 					require("formatter.filetypes.css").prettier,
 				},
+				zig = {
+					function()
+						return {
+							exe = "zig",
+							args = { "fmt", "." },
+							stdin = true,
+						}
+					end
+				},
 				lua = {
 					require("formatter.filetypes.lua").stylua,
 
