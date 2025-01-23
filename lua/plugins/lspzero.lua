@@ -75,6 +75,7 @@ return {
 					hoverKind = "FullDocumentation",
 					usePlaceholders = true,
 					buildFlags = { "-tags=prod,local,dev,stage" },
+					directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
 					hints = {
 						assignVariableTypes = true,
 						compositeLiteralFields = true,
@@ -88,6 +89,15 @@ return {
 						unreachable = true,
 						unusedparams = true,
 					},
+					codelenses = {
+						generate = true,
+						tidy = true,
+						upgrade_dependency = true,
+						vendor = true,
+					},
+					-- new config
+					-- gofumpt = true,
+					-- semanticTokens = true,
 				},
 			},
 			autostart = true,
@@ -143,7 +153,8 @@ return {
 			update_in_insert = true,
 			-- float = true,
 			float = {
-				border = "rounded",
+				-- border = "rounded",
+				border = "single",
 				source = "always", -- Or "if_many"
 			},
 			-- underline = true,
