@@ -12,11 +12,12 @@ return {
 			defaults = {
 				layout_strategy = "vertical",
 			},
-			-- pickers = {
-			-- 	find_files = {
-			-- 		theme = "ivy",
-			-- 	},
-			-- },
+			pickers = {
+				find_files = {
+					-- theme = "ivy",
+					follow = true,
+				},
+			},
 		})
 
 		local TelescopeColor = {

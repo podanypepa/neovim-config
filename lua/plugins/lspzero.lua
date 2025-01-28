@@ -27,6 +27,7 @@ return {
 	config = function()
 		local lsp_zero = require("lsp-zero")
 		local config = require("lspconfig")
+		local util = require("lspconfig/util")
 
 		-- local capabilities = require('blink.cmp').get_lsp_capabilities()
 		local capabilities =
@@ -58,8 +59,13 @@ return {
 		})
 		config.rust_analyzer.setup({
 			capabilities = capabilities,
+			filetypes = { "rust" },
+			root_dir = util.root_pattern("Cargo.toml"),
 			settings = {
 				["rust-analyzer"] = {
+					cargo = {
+						allFeatures = true,
+					},
 					diagnostics = {
 						enable = true,
 					},
@@ -156,6 +162,8 @@ return {
 				-- border = "rounded",
 				border = "single",
 				source = "always", -- Or "if_many"
+				header = "",
+				prefix = "",
 			},
 			-- underline = true,
 			underline = false,
