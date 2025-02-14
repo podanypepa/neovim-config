@@ -57,21 +57,21 @@ return {
 				},
 			},
 		})
-		config.rust_analyzer.setup({
-			capabilities = capabilities,
-			filetypes = { "rust" },
-			root_dir = util.root_pattern("Cargo.toml"),
-			settings = {
-				["rust-analyzer"] = {
-					cargo = {
-						allFeatures = true,
-					},
-					diagnostics = {
-						enable = true,
-					},
-				},
-			},
-		})
+		-- config.rust_analyzer.setup({
+		-- 	capabilities = capabilities,
+		-- 	filetypes = { "rust" },
+		-- 	root_dir = util.root_pattern("Cargo.toml"),
+		-- 	settings = {
+		-- 		["rust-analyzer"] = {
+		-- 			cargo = {
+		-- 				allFeatures = true,
+		-- 			},
+		-- 			diagnostics = {
+		-- 				enable = true,
+		-- 			},
+		-- 		},
+		-- 	},
+		-- })
 		config.gopls.setup({
 			capabilities = capabilities,
 			settings = {
