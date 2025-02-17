@@ -76,3 +76,11 @@ vim.keymap.set("n", "<leader>tr", ":Trouble lsp_references<CR>", { desc = "Troub
 -- vim.keymap.set("n", "<leader>qc", ":cclose<CR>")
 -- vim.keymap.set("n", "<leader>qn", "<cmd>cnext<CR>")
 -- vim.keymap.set("n", "<leader>qp", "<cmd>cprev<CR>")
+--
+
+
+local opts = { noremap = true, silent = true }
+vim.keymap.set('n', '<Up>', '<Nop>', opts)
+vim.keymap.set('n', '<Down>', '<Nop>', opts)
+vim.keymap.set('n', '<Left>', '<Nop>', opts)
+vim.keymap.set('n', '<Right>', '<Nop>', opts)
