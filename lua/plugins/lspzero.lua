@@ -38,6 +38,15 @@ return {
 				float_border = "rounded",
 			})
 
+		require("lspconfig").pyright.setup({
+			python = {
+				analysis = {
+					autoSearchPaths = true,
+					diagnosticMode = "openFilesOnly",
+					useLibraryCodeForTypes = true,
+				},
+			},
+		})
 		require("lspconfig").lua_ls.setup({
 			capabilities = capabilities,
 			settings = {

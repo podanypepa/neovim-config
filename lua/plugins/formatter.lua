@@ -44,6 +44,9 @@ return {
 						}
 					end
 				},
+				python = {
+					require("formatter.filetypes.python").black,
+				},
 				lua = {
 					require("formatter.filetypes.lua").stylua,
 

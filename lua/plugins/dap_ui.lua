@@ -4,6 +4,7 @@ return {
 		"mfussenegger/nvim-dap",
 		"nvim-neotest/nvim-nio",
 	},
+	lazy = true,
 	config = function()
 	end,
 }
