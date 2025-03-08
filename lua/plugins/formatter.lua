@@ -26,6 +26,9 @@ return {
 				javascript = {
 					require("formatter.filetypes.javascript").prettier,
 				},
+				svelte = {
+					require("formatter.filetypes.javascript").prettier,
+				},
 				typescript = {
 					require("formatter.filetypes.typescript").prettier,
 				},
