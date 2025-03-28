@@ -2,11 +2,11 @@ return {
 	"VonHeikemen/lsp-zero.nvim",
 	branch = "v4.x",
 	dependencies = {
-		{ "neovim/nvim-lspconfig" },             -- Required
-		{ "williamboman/mason.nvim" },           -- Optional
-		{ "williamboman/mason-lspconfig.nvim" }, -- Optional
+		{ "neovim/nvim-lspconfig" },                             -- Required
+		{ "williamboman/mason.nvim" },                           -- Optional
+		{ "williamboman/mason-lspconfig.nvim" },                 -- Optional
 		{ "hrsh7th/nvim-cmp",                 event = "InsertEnter" }, -- Required
-		{ "hrsh7th/cmp-nvim-lsp" },              -- Required
+		{ "hrsh7th/cmp-nvim-lsp" },                              -- Required
 		{ "FelipeLema/cmp-async-path" },
 		{ "hrsh7th/cmp-buffer" },
 		{ "L3MON4D3/LuaSnip" }, -- Required
