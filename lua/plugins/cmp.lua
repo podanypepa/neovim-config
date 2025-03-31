@@ -55,7 +55,7 @@ return {
 				{ name = "nvim_lsp" },
 				{ name = "vsnip" },
 				{ name = "path" },
-				{ name = "cmdline" },
+				-- { name = "cmdline" },
 			}, {
 				{ name = "buffer" },
 			}),
