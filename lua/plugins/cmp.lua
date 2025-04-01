@@ -23,6 +23,9 @@ return {
 				end,
 			},
 
+			experimental = {
+				ghost_text = true,
+			},
 			mapping = {
 				["<C-y>"] = cmp.mapping.confirm({ select = true }),
 				["<C-e>"] = cmp.mapping.abort(),
