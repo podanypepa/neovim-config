@@ -47,12 +47,13 @@ vim.api.nvim_set_keymap(
 vim.keymap.set("n", "<leader>la", ":copen<CR>:AsyncRun make lintall<CR>", { desc = "make lintall" })
 vim.keymap.set("n", "<leader>lr", ":copen<CR>:AsyncRun revive ./...<CR>", { desc = "make lintall" })
 vim.keymap.set("n", "<leader>ll", ":copen<CR>:AsyncRun golangci-lint  run ./...<CR>", { desc = "make lintall" })
+vim.keymap.set("n", "<leader>lc", ":copen<CR>:AsyncRun go tool gocritic check ./...<CR>", { desc = "gocritic" })
 
 vim.keymap.set("n", "<leader>ne", ":Neogit<CR>", { desc = "make lintall" })
 
-vim.keymap.set("n", "<leader>nf", ":Neotree filesystem reveal right<CR>", { desc = "Neotree" })
-vim.keymap.set("n", "<leader>nt", ":Neotree toggle<CR>", { desc = "Neotree" })
-vim.keymap.set("n", "<C-p>", ":Neotree toggle<CR>", { desc = "Neotree" })
+-- vim.keymap.set("n", "<leader>nf", ":Neotree filesystem reveal right<CR>", { desc = "Neotree" })
+-- vim.keymap.set("n", "<leader>nt", ":Neotree toggle<CR>", { desc = "Neotree" })
+-- vim.keymap.set("n", "<C-p>", ":Neotree toggle<CR>", { desc = "Neotree" })
 
 vim.keymap.set("n", "n", "nzzzv", {})
 vim.keymap.set("n", "N", "Nzzzv", {})
