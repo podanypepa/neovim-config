@@ -1,4 +1,5 @@
 return {
+	-- enabled = true,
 	enabled = false,
 	"mason-org/mason.nvim",
 	dependencies = {
