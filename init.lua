@@ -5,7 +5,7 @@ vim.g.loaded_python3_provider = 0
 vim.opt.relativenumber = true
 vim.opt.nu = true
 vim.opt.hidden = true
-vim.opt.cursorline = true
+-- vim.opt.cursorline = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -114,7 +114,10 @@ augroup highlight_yank
 augroup END
 ]])
 
--- vim.opt.guicursor =
--- "n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor,o:hor50-Cursor/lCursor"
--- vim.api.nvim_set_hl(0, "Cursor", { fg = "NONE", bg = "yellow" })
--- vim.api.nvim_set_hl(0, "lCursor", { fg = "NONE", bg = "#00ff00" })
+vim.opt.guicursor = {
+	"n-v-c:block",                               -- normální, vizuální, příkazový: blok
+	"i-ci-ve:ver25",                             -- insert: svislý pruh
+	"r-cr:hor20",                                -- replace: vodorovná čára
+	"o:hor50",                                   -- 'o' příkaz: půlka vodorovně
+	"sm:block-blinkwait175-blinkoff150-blinkon175", -- při hledání
+}
