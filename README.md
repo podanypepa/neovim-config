@@ -6,7 +6,9 @@ nvim fully started in 74ms.
 
 
 ```bash
-nvim --startuptime ./start.log
+tar czvf ~/.config/nvim.tgz ~/.config/nvim/
+git clone https://github.com/podanypepa/neovim-config.git ~/.config/nvim/
+nvim --headless --startuptime ./start.log +qa
 cat ./start.log
 ```
 
