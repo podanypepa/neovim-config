@@ -35,6 +35,7 @@ vim.o.incsearch = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.opt.signcolumn = "yes"
+vim.opt.cursorline = true
 -- vim.opt.colorcolumn = "80"
 -- vim.opt.colorcolumn = "99"
 vim.g.highlightedyank_highlight_duration = 200
