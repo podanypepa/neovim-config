@@ -5,7 +5,10 @@
 nvim fully started in 74ms.
 
 
-`nvim --startuptime start.log`
+```bash
+nvim --startuptime ./start.log
+cat ./start.log
+```
 
 ```text
 --- Startup times for process: Primary (or UI client) ---
