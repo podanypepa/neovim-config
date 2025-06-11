@@ -1,5 +1,7 @@
 # nvim config
 
+> minimalist, sufficient, fully functional configuration for golang development.
+
 nvim fully started in 74ms.
 
 
