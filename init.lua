@@ -72,6 +72,7 @@ vim.lsp.config("gopls", {
 			analyses = {
 				unreachable = true,
 				unusedparams = true,
+				unusedwrite = true,
 			},
 			codelenses = {
 				generate = true,
@@ -79,6 +80,8 @@ vim.lsp.config("gopls", {
 				upgrade_dependency = true,
 				vendor = true,
 			},
+			staticcheck = true,
+
 			-- new config
 			-- gofumpt = true,
 			-- semanticTokens = true,
@@ -124,6 +127,20 @@ vim.diagnostic.config({
 	},
 	underline = false,
 	severity_sort = true,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*.go",
+	callback = function()
+		vim.lsp.buf.code_action({
+			context = {
+				only = { "source.organizeImports" },
+				diagnostics = {},
+			},
+			apply = true,
+		})
+		vim.lsp.buf.format({ async = false })
+	end,
 })
 
 vim.cmd([[
@@ -194,3 +211,10 @@ vim.keymap.set("n", "<leader>lc", ":copen<CR>:AsyncRun go tool gocritic check ./
 vim.keymap.set("n", "gt", function()
 	vim.lsp.buf.type_definition()
 end, {})
+
+vim.keymap.set("n", "<leader>oi", function()
+	vim.lsp.buf.code_action({
+		context = { only = { "source.organizeImports" } },
+		apply = true,
+	})
+end, { desc = "Organize imports" })

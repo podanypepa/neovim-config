@@ -9,7 +9,15 @@ return {
 				go = {
 					-- require("formatter.filetypes.go").gofmt,
 					require("formatter.filetypes.go").gofumpt,
-					-- require("formatter.filetypes.go").goimports,
+					function()
+						vim.lsp.buf.code_action({
+							context = {
+								only = { "source.organizeImports" },
+								diagnostics = {},
+							},
+							apply = true,
+						})
+					end,
 				},
 				rust = {
 					require("formatter.filetypes.rust").rustfmt,
@@ -52,7 +60,6 @@ return {
 				},
 				lua = {
 					require("formatter.filetypes.lua").stylua,
-
 					function()
 						if util.get_current_buffer_file_name() == "special.lua" then
 							return nil
