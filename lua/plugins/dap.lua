@@ -9,6 +9,17 @@ return {
 	lazy = true,
 	keys = {
 		{
+			"<leader>dq",
+			function()
+				require("dap").terminate()
+				require("dapui").close()
+				require("nvim-dap-virtual-text").toggle()
+			end,
+			desc = "Terminate",
+			nowait = true,
+			remap = false,
+		},
+		{
 			"<leader>dsi",
 			function()
 				require("dap").step_into()
@@ -95,7 +106,17 @@ return {
 		dap.listeners.before.event_terminated["dapui_config"] = dapui.close
 		dap.listeners.before.event_exited["dapui_config"] = dapui.close
 
-		require("nvim-dap-virtual-text").setup()
+		require("nvim-dap-virtual-text").setup({
+			enable = true,
+			all_frames = true,
+			virt_lines = false,
+			commented = false,
+			highlight_changed_variables = true,
+			highlight_new_as_changed = false,
+			show_stop_reason = true,
+			only_first_definition = false,
+			all_references = true,
+		})
 
 		require("dap-go").setup({
 			delve = {
