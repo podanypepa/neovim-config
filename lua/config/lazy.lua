@@ -18,15 +18,30 @@ require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
 	},
-	-- install = { colorscheme = { "habamax" } },
 	checker = { enabled = true },
 	performance = {
 		cache = {
 			enabled = true,
 		},
 		reset_packpath = true,
+		rtp = {
+			reset = true,
+		},
 	},
-	rtp = {
-		reset = true,
+	ui = {
+		size = { width = 1, height = 1 },
+		border = "none",
+		backdrop = 60,
+		wrap = false,
+	},
+	headless = {
+		-- show the output from process commands like git
+		process = true,
+		-- show log messages
+		log = true,
+		-- show task start/end
+		task = true,
+		-- use ansi colors
+		colors = true,
 	},
 })

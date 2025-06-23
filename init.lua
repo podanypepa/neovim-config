@@ -211,7 +211,6 @@ vim.keymap.set("n", "<leader>lc", ":copen<CR>:AsyncRun go tool gocritic check ./
 vim.keymap.set("n", "gt", function()
 	vim.lsp.buf.type_definition()
 end, {})
-
 vim.keymap.set("n", "<leader>oi", function()
 	vim.lsp.buf.code_action({
 		context = { only = { "source.organizeImports" } },
