@@ -48,6 +48,12 @@ vim.g.netrw_fastbrowse = 0
 vim.api.nvim_set_hl(0, "Comment", { italic = true })
 vim.o.winborder = "rounded"
 
+vim.opt.guicursor = {
+	"n-v-c:block",
+	"i:block-blinkon500-blinkoff500-blinkwait300",
+	"r:hor20",
+}
+
 require("config.lazy")
 require("config.colors")
 
