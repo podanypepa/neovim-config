@@ -65,3 +65,6 @@ vim.keymap.set("n", "<leader>oi", function()
 		apply = true,
 	})
 end, { desc = "Organize imports" })
+vim.keymap.set("n", "<leader>mm", function()
+	require("marko").show_marks()
+end, { desc = "Show marks popup" })
