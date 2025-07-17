@@ -37,8 +37,6 @@ vim.o.smartcase = true
 vim.opt.signcolumn = "yes"
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "both"
--- vim.opt.guicursor =
--- "n-v-c-sm:block-nCursor-blinkwait50-blinkon50-blinkoff50,i-ci-ve:ver25-Cursor-blinkon100-blinkoff100,r-cr-o:hor20"
 -- vim.opt.colorcolumn = "80"
 -- vim.opt.colorcolumn = "99"
 vim.g.highlightedyank_highlight_duration = 200
@@ -50,6 +48,7 @@ vim.o.winborder = "rounded"
 
 vim.opt.guicursor = {
 	"n-v-c:block",
-	"i:block-blinkon500-blinkoff500-blinkwait300",
+	-- "i:ver40",
+	"i:block-blinkon100-blinkoff100-blinkwait50",
 	"r:hor20",
 }
