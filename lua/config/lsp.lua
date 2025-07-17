@@ -1,5 +1,20 @@
+-- lsp servers configs
+-- https://github.com/neovim/nvim-lspconfig/tree/master/lsp
+
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("gopls")
+vim.lsp.enable("jsonls")
+vim.lsp.enable("yamlls")
+vim.lsp.enable("dockerls")
+vim.lsp.enable("svelte")
+vim.lsp.enable("bashls")
+vim.lsp.enable("docker_compose_language_service")
+vim.lsp.enable("html")
+vim.lsp.enable("pylsp")
+vim.lsp.enable("systemd_ls")
+vim.lsp.enable("templ")
+vim.lsp.enable("ts_ls")
+-- vim.lsp.enable("pyright")
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(ev)
