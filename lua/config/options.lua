@@ -38,7 +38,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "both"
 -- vim.opt.colorcolumn = "80"
--- vim.opt.colorcolumn = "99"
 vim.g.highlightedyank_highlight_duration = 200
 vim.g.netrw_banner = 0
 -- vim.g.netrw_winsize = 20
