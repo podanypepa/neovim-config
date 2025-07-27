@@ -10,9 +10,7 @@ return {
 	lazy = false,
 	config = function()
 		require("oil").setup({
-			keymaps = {
-				["-"] = "actions.close",
-			},
+			keymaps = {},
 			confirm = false,
 			skip_confirm_for_simple_edits = true,
 			prompt_save_on_select_new_entry = false,
@@ -50,6 +48,6 @@ return {
 				win_options = {},
 			},
 		})
-		-- vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+		vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 	end,
 }
