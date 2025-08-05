@@ -1,7 +1,11 @@
 return {
 	"vague2k/vague.nvim",
-	enabled = false,
+	enabled = true,
 	config = function()
-		require("vague").setup({})
+		require("vague").setup({
+			transparent = true,
+			bold = true,
+			italic = true,
+		})
 	end,
 }
