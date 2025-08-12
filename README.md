@@ -1,5 +1,8 @@
 # nvim config
 
+___deprecated___
+# This repository is deprecated. Please use [https://github.com/podanypepa/config/tree/main/nvim](https://github.com/podanypepa/config/tree/main/nvim)
+
 > minimalist, sufficient, fully functional configuration for golang development.
 
 nvim fully started in 74ms.

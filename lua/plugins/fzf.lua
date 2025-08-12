@@ -5,6 +5,9 @@ return {
 		require("fzf-lua").setup({
 			-- fzf_bin = "sk",
 			fzf_colors = true,
+			files = {
+				cmd = "fd --type f --hidden --no-ignore --exclude .git",
+			},
 			fzf_opts = {
 				["--color"] = "fg:#c0c0c0,bg:#1e1e2e,fg+:#ffa500,bg+:#2e2e2e,hl:#61afef,hl+:#ffcc00",
 			},
