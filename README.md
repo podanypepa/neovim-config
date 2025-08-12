@@ -8,7 +8,7 @@ nvim fully started in 74ms.
 
 Please use [https://github.com/podanypepa/config/tree/main/nvim](https://github.com/podanypepa/config/tree/main/nvim)
 
-
+## Installation
 
 ```bash
 tar czvf ~/.config/nvim.tgz ~/.config/nvim/
@@ -17,6 +17,8 @@ git clone https://github.com/podanypepa/neovim-config.git ~/.config/nvim/
 nvim --headless --startuptime ./start.log +qa
 cat ./start.log
 ```
+
+## Startup log
 
 ```text
 --- Startup times for process: Primary (or UI client) ---
